@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8593CF242B6DDDC600613B07 /* GetWordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF232B6DDDC600613B07 /* GetWordDefinition.swift */; };
+		8593CF2A2B6DE5A600613B07 /* WordDefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF292B6DE5A600613B07 /* WordDefinitionModel.swift */; };
 		85EC02852B6DCF3A003B0206 /* DictionMasterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02842B6DCF3A003B0206 /* DictionMasterApp.swift */; };
 		85EC02872B6DCF3A003B0206 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02862B6DCF3A003B0206 /* ContentView.swift */; };
 		85EC02892B6DCF3C003B0206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85EC02882B6DCF3C003B0206 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8593CF232B6DDDC600613B07 /* GetWordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinition.swift; sourceTree = "<group>"; };
+		8593CF292B6DE5A600613B07 /* WordDefinitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionModel.swift; sourceTree = "<group>"; };
 		85EC02812B6DCF3A003B0206 /* DictionMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85EC02842B6DCF3A003B0206 /* DictionMasterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionMasterApp.swift; sourceTree = "<group>"; };
 		85EC02862B6DCF3A003B0206 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 		85EC02DA2B6DDBCF003B0206 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				8593CF232B6DDDC600613B07 /* GetWordDefinition.swift */,
+				8593CF292B6DE5A600613B07 /* WordDefinitionModel.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -195,6 +201,7 @@
 				85EC027D2B6DCF3A003B0206 /* Sources */,
 				85EC027E2B6DCF3A003B0206 /* Frameworks */,
 				85EC027F2B6DCF3A003B0206 /* Resources */,
+				8593CF252B6DDE8300613B07 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -282,6 +289,7 @@
 					};
 					85EC02D82B6DDBCE003B0206 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -294,6 +302,8 @@
 				Base,
 			);
 			mainGroup = 85EC02782B6DCF3A003B0206;
+			packageReferences = (
+			);
 			productRefGroup = 85EC02822B6DCF3A003B0206 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +349,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8593CF252B6DDE8300613B07 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		85EC027D2B6DCF3A003B0206 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -375,6 +406,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8593CF2A2B6DE5A600613B07 /* WordDefinitionModel.swift in Sources */,
+				8593CF242B6DDDC600613B07 /* GetWordDefinition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +556,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DictionMaster/Preview Content\"";
 				DEVELOPMENT_TEAM = F2MBMJ3PK6;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -552,6 +586,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DictionMaster/Preview Content\"";
 				DEVELOPMENT_TEAM = F2MBMJ3PK6;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -650,6 +685,7 @@
 		85EC02DE2B6DDBCF003B0206 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -676,6 +712,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -685,6 +722,7 @@
 		85EC02DF2B6DDBCF003B0206 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
