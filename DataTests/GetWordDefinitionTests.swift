@@ -26,8 +26,8 @@ final class RemoteGetWordDefiniton {
     }
 }
 
-final class GetWordDefinitionTests: XCTestCase {
-    func test_() throws {
+final class RemoteGetWordDefinitionTests: XCTestCase {
+    func test_get_ShouldUseTheSameUrlAsHttpGetClient() throws {
         let url = URL(string: "http://any-url.com")!
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteGetWordDefiniton(url: url, httpClient: httpClientSpy)
