@@ -21,11 +21,6 @@
 		85EC02962B6DCF3C003B0206 /* DictionMasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02952B6DCF3C003B0206 /* DictionMasterTests.swift */; };
 		85EC02A02B6DCF3C003B0206 /* DictionMasterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC029F2B6DCF3C003B0206 /* DictionMasterUITests.swift */; };
 		85EC02A22B6DCF3C003B0206 /* DictionMasterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02A12B6DCF3C003B0206 /* DictionMasterUITestsLaunchTests.swift */; };
-		85EC02B02B6DD006003B0206 /* FreeDictionaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02AF2B6DD006003B0206 /* FreeDictionaryService.swift */; };
-		85EC02B32B6DD417003B0206 /* WordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02B22B6DD417003B0206 /* WordDefinition.swift */; };
-		85EC02B52B6DD4C5003B0206 /* Phonetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02B42B6DD4C5003B0206 /* Phonetic.swift */; };
-		85EC02B72B6DD7A4003B0206 /* Meaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02B62B6DD7A4003B0206 /* Meaning.swift */; };
-		85EC02B92B6DD7BE003B0206 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02B82B6DD7BE003B0206 /* Definition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,11 +85,6 @@
 		85EC029B2B6DCF3C003B0206 /* DictionMasterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionMasterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85EC029F2B6DCF3C003B0206 /* DictionMasterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionMasterUITests.swift; sourceTree = "<group>"; };
 		85EC02A12B6DCF3C003B0206 /* DictionMasterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionMasterUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		85EC02AF2B6DD006003B0206 /* FreeDictionaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeDictionaryService.swift; sourceTree = "<group>"; };
-		85EC02B22B6DD417003B0206 /* WordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinition.swift; sourceTree = "<group>"; };
-		85EC02B42B6DD4C5003B0206 /* Phonetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phonetic.swift; sourceTree = "<group>"; };
-		85EC02B62B6DD7A4003B0206 /* Meaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meaning.swift; sourceTree = "<group>"; };
-		85EC02B82B6DD7BE003B0206 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		85EC02D92B6DDBCE003B0206 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -199,8 +189,6 @@
 		85EC02832B6DCF3A003B0206 /* DictionMaster */ = {
 			isa = PBXGroup;
 			children = (
-				85EC02B12B6DD40B003B0206 /* Domain */,
-				85EC02AE2B6DCFB1003B0206 /* Data */,
 				85EC02842B6DCF3A003B0206 /* DictionMasterApp.swift */,
 				85EC02862B6DCF3A003B0206 /* ContentView.swift */,
 				85EC02882B6DCF3C003B0206 /* Assets.xcassets */,
@@ -232,25 +220,6 @@
 				85EC02A12B6DCF3C003B0206 /* DictionMasterUITestsLaunchTests.swift */,
 			);
 			path = DictionMasterUITests;
-			sourceTree = "<group>";
-		};
-		85EC02AE2B6DCFB1003B0206 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				85EC02AF2B6DD006003B0206 /* FreeDictionaryService.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		85EC02B12B6DD40B003B0206 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				85EC02B22B6DD417003B0206 /* WordDefinition.swift */,
-				85EC02B42B6DD4C5003B0206 /* Phonetic.swift */,
-				85EC02B62B6DD7A4003B0206 /* Meaning.swift */,
-				85EC02B82B6DD7BE003B0206 /* Definition.swift */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		85EC02DA2B6DDBCF003B0206 /* Domain */ = {
@@ -539,13 +508,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85EC02B32B6DD417003B0206 /* WordDefinition.swift in Sources */,
 				85EC02872B6DCF3A003B0206 /* ContentView.swift in Sources */,
-				85EC02B02B6DD006003B0206 /* FreeDictionaryService.swift in Sources */,
-				85EC02B52B6DD4C5003B0206 /* Phonetic.swift in Sources */,
-				85EC02B92B6DD7BE003B0206 /* Definition.swift in Sources */,
 				85EC02852B6DCF3A003B0206 /* DictionMasterApp.swift in Sources */,
-				85EC02B72B6DD7A4003B0206 /* Meaning.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
