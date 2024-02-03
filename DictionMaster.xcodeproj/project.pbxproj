@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		853233AA2B6E0BA900796931 /* Phonetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233A92B6E0BA900796931 /* Phonetic.swift */; };
+		853233AC2B6E0BBC00796931 /* Meaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233AB2B6E0BBC00796931 /* Meaning.swift */; };
+		853233AE2B6E0BDB00796931 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233AD2B6E0BDB00796931 /* Definition.swift */; };
 		8593CF242B6DDDC600613B07 /* GetWordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF232B6DDDC600613B07 /* GetWordDefinition.swift */; };
 		8593CF2A2B6DE5A600613B07 /* WordDefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF292B6DE5A600613B07 /* WordDefinitionModel.swift */; };
 		8593CF522B6DE7AF00613B07 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8593CF4A2B6DE7AE00613B07 /* Data.framework */; };
@@ -69,6 +72,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		853233A92B6E0BA900796931 /* Phonetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phonetic.swift; sourceTree = "<group>"; };
+		853233AB2B6E0BBC00796931 /* Meaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meaning.swift; sourceTree = "<group>"; };
+		853233AD2B6E0BDB00796931 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		8593CF232B6DDDC600613B07 /* GetWordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinition.swift; sourceTree = "<group>"; };
 		8593CF292B6DE5A600613B07 /* WordDefinitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionModel.swift; sourceTree = "<group>"; };
 		8593CF4A2B6DE7AE00613B07 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +142,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		853233A72B6E0B6D00796931 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				8593CF232B6DDDC600613B07 /* GetWordDefinition.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		853233A82B6E0B7F00796931 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8593CF292B6DE5A600613B07 /* WordDefinitionModel.swift */,
+				853233A92B6E0BA900796931 /* Phonetic.swift */,
+				853233AB2B6E0BBC00796931 /* Meaning.swift */,
+				853233AD2B6E0BDB00796931 /* Definition.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8593CF4B2B6DE7AE00613B07 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,8 +250,8 @@
 		85EC02DA2B6DDBCF003B0206 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				8593CF232B6DDDC600613B07 /* GetWordDefinition.swift */,
-				8593CF292B6DE5A600613B07 /* WordDefinitionModel.swift */,
+				853233A82B6E0B7F00796931 /* Models */,
+				853233A72B6E0B6D00796931 /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -535,7 +560,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8593CF2A2B6DE5A600613B07 /* WordDefinitionModel.swift in Sources */,
+				853233AA2B6E0BA900796931 /* Phonetic.swift in Sources */,
+				853233AE2B6E0BDB00796931 /* Definition.swift in Sources */,
 				8593CF242B6DDDC600613B07 /* GetWordDefinition.swift in Sources */,
+				853233AC2B6E0BBC00796931 /* Meaning.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

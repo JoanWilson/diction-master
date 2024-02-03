@@ -22,18 +22,3 @@ public struct WordDefinitionModel {
         self.meanings = meanings
     }
 }
-
-public struct Phonetic: Codable {
-    public let text: String
-    public let audio: String?
-}
-
-public struct Meaning: Codable {
-    public let partOfSpeech: String
-    public let definitions: [Definition]
-}
-
-public struct Definition: Codable {
-    public let definition: String
-    public let example: String
-}

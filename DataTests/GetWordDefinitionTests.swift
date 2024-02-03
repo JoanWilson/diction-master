@@ -34,7 +34,9 @@ final class RemoteGetWordDefinitionTests: XCTestCase {
         sut.get()
         XCTAssertEqual(httpClientSpy.url, url)
     }
-    
+}
+
+extension RemoteGetWordDefinitionTests {
     class HttpClientSpy: HttpGetClient {
         var url: URL?
         
