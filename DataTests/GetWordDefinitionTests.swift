@@ -8,24 +8,6 @@
 import XCTest
 @testable import Data
 
-protocol HttpGetClient {
-    func get(url: URL)
-}
-
-final class RemoteGetWordDefiniton {
-    private let url: URL
-    private let httpClient: HttpGetClient
-    
-    init(url: URL, httpClient: HttpGetClient) {
-        self.url = url
-        self.httpClient = httpClient
-    }
-    
-    func get() {
-        httpClient.get(url: url)
-    }
-}
-
 final class RemoteGetWordDefinitionTests: XCTestCase {
     func test_get_ShouldUseTheSameUrlAsHttpGetClient() throws {
         let url = URL(string: "http://any-url.com")!

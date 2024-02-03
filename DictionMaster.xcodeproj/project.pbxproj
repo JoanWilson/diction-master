@@ -10,6 +10,8 @@
 		853233AA2B6E0BA900796931 /* Phonetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233A92B6E0BA900796931 /* Phonetic.swift */; };
 		853233AC2B6E0BBC00796931 /* Meaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233AB2B6E0BBC00796931 /* Meaning.swift */; };
 		853233AE2B6E0BDB00796931 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233AD2B6E0BDB00796931 /* Definition.swift */; };
+		853233B22B6E107800796931 /* RemoteGetWordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233B12B6E107800796931 /* RemoteGetWordDefinition.swift */; };
+		853233B42B6E10A300796931 /* HttpGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233B32B6E10A300796931 /* HttpGetClient.swift */; };
 		8593CF242B6DDDC600613B07 /* GetWordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF232B6DDDC600613B07 /* GetWordDefinition.swift */; };
 		8593CF2A2B6DE5A600613B07 /* WordDefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF292B6DE5A600613B07 /* WordDefinitionModel.swift */; };
 		8593CF522B6DE7AF00613B07 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8593CF4A2B6DE7AE00613B07 /* Data.framework */; };
@@ -75,6 +77,8 @@
 		853233A92B6E0BA900796931 /* Phonetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phonetic.swift; sourceTree = "<group>"; };
 		853233AB2B6E0BBC00796931 /* Meaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meaning.swift; sourceTree = "<group>"; };
 		853233AD2B6E0BDB00796931 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
+		853233B12B6E107800796931 /* RemoteGetWordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetWordDefinition.swift; sourceTree = "<group>"; };
+		853233B32B6E10A300796931 /* HttpGetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpGetClient.swift; sourceTree = "<group>"; };
 		8593CF232B6DDDC600613B07 /* GetWordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinition.swift; sourceTree = "<group>"; };
 		8593CF292B6DE5A600613B07 /* WordDefinitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionModel.swift; sourceTree = "<group>"; };
 		8593CF4A2B6DE7AE00613B07 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,9 +165,27 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		853233AF2B6E106000796931 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				853233B12B6E107800796931 /* RemoteGetWordDefinition.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		853233B02B6E106800796931 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				853233B32B6E10A300796931 /* HttpGetClient.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
 		8593CF4B2B6DE7AE00613B07 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				853233B02B6E106800796931 /* Http */,
+				853233AF2B6E106000796931 /* UseCases */,
 				8593CF4C2B6DE7AE00613B07 /* Data.h */,
 			);
 			path = Data;
@@ -399,6 +421,7 @@
 				TargetAttributes = {
 					8593CF492B6DE7AE00613B07 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 					8593CF502B6DE7AE00613B07 = {
 						CreatedOnToolsVersion = 15.2;
@@ -518,6 +541,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853233B22B6E107800796931 /* RemoteGetWordDefinition.swift in Sources */,
+				853233B42B6E10A300796931 /* HttpGetClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +621,7 @@
 		8593CF5A2B6DE7AF00613B07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -622,6 +648,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -631,6 +658,7 @@
 		8593CF5B2B6DE7AF00613B07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -666,6 +694,7 @@
 		8593CF5D2B6DE7AF00613B07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F2MBMJ3PK6;
@@ -683,6 +712,7 @@
 		8593CF5E2B6DE7AF00613B07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F2MBMJ3PK6;
