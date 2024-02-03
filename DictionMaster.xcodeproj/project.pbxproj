@@ -14,6 +14,11 @@
 		85EC02962B6DCF3C003B0206 /* DictionMasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02952B6DCF3C003B0206 /* DictionMasterTests.swift */; };
 		85EC02A02B6DCF3C003B0206 /* DictionMasterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC029F2B6DCF3C003B0206 /* DictionMasterUITests.swift */; };
 		85EC02A22B6DCF3C003B0206 /* DictionMasterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02A12B6DCF3C003B0206 /* DictionMasterUITestsLaunchTests.swift */; };
+		85EC02B02B6DD006003B0206 /* FreeDictionaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02AF2B6DD006003B0206 /* FreeDictionaryService.swift */; };
+		85EC02B32B6DD417003B0206 /* WordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02B22B6DD417003B0206 /* WordDefinition.swift */; };
+		85EC02B52B6DD4C5003B0206 /* Phonetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02B42B6DD4C5003B0206 /* Phonetic.swift */; };
+		85EC02B72B6DD7A4003B0206 /* Meaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02B62B6DD7A4003B0206 /* Meaning.swift */; };
+		85EC02B92B6DD7BE003B0206 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02B82B6DD7BE003B0206 /* Definition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,12 @@
 		85EC029B2B6DCF3C003B0206 /* DictionMasterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionMasterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85EC029F2B6DCF3C003B0206 /* DictionMasterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionMasterUITests.swift; sourceTree = "<group>"; };
 		85EC02A12B6DCF3C003B0206 /* DictionMasterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionMasterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		85EC02AF2B6DD006003B0206 /* FreeDictionaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeDictionaryService.swift; sourceTree = "<group>"; };
+		85EC02B22B6DD417003B0206 /* WordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinition.swift; sourceTree = "<group>"; };
+		85EC02B42B6DD4C5003B0206 /* Phonetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phonetic.swift; sourceTree = "<group>"; };
+		85EC02B62B6DD7A4003B0206 /* Meaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meaning.swift; sourceTree = "<group>"; };
+		85EC02B82B6DD7BE003B0206 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
+		85EC02D92B6DDBCE003B0206 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +79,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85EC02D62B6DDBCE003B0206 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +95,7 @@
 				85EC02832B6DCF3A003B0206 /* DictionMaster */,
 				85EC02942B6DCF3C003B0206 /* DictionMasterTests */,
 				85EC029E2B6DCF3C003B0206 /* DictionMasterUITests */,
+				85EC02DA2B6DDBCF003B0206 /* Domain */,
 				85EC02822B6DCF3A003B0206 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +106,7 @@
 				85EC02812B6DCF3A003B0206 /* DictionMaster.app */,
 				85EC02912B6DCF3C003B0206 /* DictionMasterTests.xctest */,
 				85EC029B2B6DCF3C003B0206 /* DictionMasterUITests.xctest */,
+				85EC02D92B6DDBCE003B0206 /* Domain.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +114,8 @@
 		85EC02832B6DCF3A003B0206 /* DictionMaster */ = {
 			isa = PBXGroup;
 			children = (
+				85EC02B12B6DD40B003B0206 /* Domain */,
+				85EC02AE2B6DCFB1003B0206 /* Data */,
 				85EC02842B6DCF3A003B0206 /* DictionMasterApp.swift */,
 				85EC02862B6DCF3A003B0206 /* ContentView.swift */,
 				85EC02882B6DCF3C003B0206 /* Assets.xcassets */,
@@ -127,7 +149,43 @@
 			path = DictionMasterUITests;
 			sourceTree = "<group>";
 		};
+		85EC02AE2B6DCFB1003B0206 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				85EC02AF2B6DD006003B0206 /* FreeDictionaryService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		85EC02B12B6DD40B003B0206 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				85EC02B22B6DD417003B0206 /* WordDefinition.swift */,
+				85EC02B42B6DD4C5003B0206 /* Phonetic.swift */,
+				85EC02B62B6DD7A4003B0206 /* Meaning.swift */,
+				85EC02B82B6DD7BE003B0206 /* Definition.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		85EC02DA2B6DDBCF003B0206 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		85EC02D42B6DDBCE003B0206 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		85EC02802B6DCF3A003B0206 /* DictionMaster */ = {
@@ -183,6 +241,24 @@
 			productReference = 85EC029B2B6DCF3C003B0206 /* DictionMasterUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		85EC02D82B6DDBCE003B0206 /* Domain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85EC02DD2B6DDBCF003B0206 /* Build configuration list for PBXNativeTarget "Domain" */;
+			buildPhases = (
+				85EC02D42B6DDBCE003B0206 /* Headers */,
+				85EC02D52B6DDBCE003B0206 /* Sources */,
+				85EC02D62B6DDBCE003B0206 /* Frameworks */,
+				85EC02D72B6DDBCE003B0206 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Domain;
+			productName = Domain;
+			productReference = 85EC02D92B6DDBCE003B0206 /* Domain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,6 +280,9 @@
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 85EC02802B6DCF3A003B0206;
 					};
+					85EC02D82B6DDBCE003B0206 = {
+						CreatedOnToolsVersion = 15.2;
+					};
 				};
 			};
 			buildConfigurationList = 85EC027C2B6DCF3A003B0206 /* Build configuration list for PBXProject "DictionMaster" */;
@@ -222,6 +301,7 @@
 				85EC02802B6DCF3A003B0206 /* DictionMaster */,
 				85EC02902B6DCF3C003B0206 /* DictionMasterTests */,
 				85EC029A2B6DCF3C003B0206 /* DictionMasterUITests */,
+				85EC02D82B6DDBCE003B0206 /* Domain */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +330,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85EC02D72B6DDBCE003B0206 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -257,8 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85EC02B32B6DD417003B0206 /* WordDefinition.swift in Sources */,
 				85EC02872B6DCF3A003B0206 /* ContentView.swift in Sources */,
+				85EC02B02B6DD006003B0206 /* FreeDictionaryService.swift in Sources */,
+				85EC02B52B6DD4C5003B0206 /* Phonetic.swift in Sources */,
+				85EC02B92B6DD7BE003B0206 /* Definition.swift in Sources */,
 				85EC02852B6DCF3A003B0206 /* DictionMasterApp.swift in Sources */,
+				85EC02B72B6DD7A4003B0206 /* Meaning.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +368,13 @@
 			files = (
 				85EC02A02B6DCF3C003B0206 /* DictionMasterUITests.swift in Sources */,
 				85EC02A22B6DCF3C003B0206 /* DictionMasterUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85EC02D52B6DDBCE003B0206 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +647,76 @@
 			};
 			name = Release;
 		};
+		85EC02DE2B6DDBCF003B0206 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F2MBMJ3PK6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joanwilson.Domain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		85EC02DF2B6DDBCF003B0206 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F2MBMJ3PK6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joanwilson.Domain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -583,6 +752,15 @@
 			buildConfigurations = (
 				85EC02AC2B6DCF3C003B0206 /* Debug */,
 				85EC02AD2B6DCF3C003B0206 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85EC02DD2B6DDBCF003B0206 /* Build configuration list for PBXNativeTarget "Domain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85EC02DE2B6DDBCF003B0206 /* Debug */,
+				85EC02DF2B6DDBCF003B0206 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
