@@ -5,7 +5,7 @@
 //  Created by Joan Wilson Oliveira on 03/02/24.
 //
 
-import Foundation
+import Domain
 
 public final class RemoteGetWordDefiniton {
     private let url: URL
@@ -16,7 +16,9 @@ public final class RemoteGetWordDefiniton {
         self.httpClient = httpClient
     }
     
-    public func get() {
-        httpClient.get(url: url)
+    public func get(word: String, completion: @escaping (DomainError) -> Void) {
+        httpClient.get(url: url) { error in
+            completion(.unexpected)
+        }
     }
 }
