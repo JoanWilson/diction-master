@@ -7,25 +7,25 @@
 
 import Foundation
 
-struct WordDefinitionModel {
-    let word: String
-    let phonetic: String
-    let phonetics: [Phonetic]
-    let origin: String
-    let meanings: [Meaning]
+public struct WordDefinitionModel {
+    public let word: String
+    public let phonetic: String
+    public let phonetics: [Phonetic]
+    public let origin: String
+    public let meanings: [Meaning]
 }
 
-struct Phonetic: Codable {
-    let text: String
-    let audio: String?
+public struct Phonetic: Codable {
+    public let text: String
+    public let audio: String?
 }
 
-struct Meaning: Codable {
-    let partOfSpeech: String
-    let definitions: [Definition]
+public struct Meaning: Codable {
+    public let partOfSpeech: String
+    public let definitions: [Definition]
 }
 
-struct Definition: Codable {
-    let definition: String
-    let example: String
+public struct Definition: Codable {
+    public let definition: String
+    public let example: String
 }

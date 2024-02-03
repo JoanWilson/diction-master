@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol GetWordDefinition {
+public protocol GetWordDefinition {
     func get(word: String, completion: @escaping (Result<WordDefinitionModel, Error>) -> Void)
 }
