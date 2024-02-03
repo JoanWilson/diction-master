@@ -10,7 +10,7 @@
 		8593CF242B6DDDC600613B07 /* GetWordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF232B6DDDC600613B07 /* GetWordDefinition.swift */; };
 		8593CF2A2B6DE5A600613B07 /* WordDefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF292B6DE5A600613B07 /* WordDefinitionModel.swift */; };
 		8593CF522B6DE7AF00613B07 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8593CF4A2B6DE7AE00613B07 /* Data.framework */; };
-		8593CF572B6DE7AF00613B07 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF562B6DE7AF00613B07 /* DataTests.swift */; };
+		8593CF572B6DE7AF00613B07 /* GetWordDefinitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF562B6DE7AF00613B07 /* GetWordDefinitionTests.swift */; };
 		8593CF582B6DE7AF00613B07 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 8593CF4C2B6DE7AE00613B07 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8593CF602B6DE7DD00613B07 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EC02D92B6DDBCE003B0206 /* Domain.framework */; };
 		8593CF612B6DE7DD00613B07 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85EC02D92B6DDBCE003B0206 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -79,7 +79,7 @@
 		8593CF4A2B6DE7AE00613B07 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8593CF4C2B6DE7AE00613B07 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		8593CF512B6DE7AE00613B07 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8593CF562B6DE7AF00613B07 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
+		8593CF562B6DE7AF00613B07 /* GetWordDefinitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinitionTests.swift; sourceTree = "<group>"; };
 		85EC02812B6DCF3A003B0206 /* DictionMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85EC02842B6DCF3A003B0206 /* DictionMasterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionMasterApp.swift; sourceTree = "<group>"; };
 		85EC02862B6DCF3A003B0206 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		8593CF552B6DE7AF00613B07 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				8593CF562B6DE7AF00613B07 /* DataTests.swift */,
+				8593CF562B6DE7AF00613B07 /* GetWordDefinitionTests.swift */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -531,7 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8593CF572B6DE7AF00613B07 /* DataTests.swift in Sources */,
+				8593CF572B6DE7AF00613B07 /* GetWordDefinitionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
