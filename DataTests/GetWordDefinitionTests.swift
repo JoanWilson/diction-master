@@ -43,8 +43,6 @@ final class RemoteGetWordDefinitionTests: XCTestCase {
         httpClientSpy.completeWithError(.noInternetConnection)
         wait(for: [expected], timeout: 1)
     }
-    
-    
 }
 
 extension RemoteGetWordDefinitionTests {
