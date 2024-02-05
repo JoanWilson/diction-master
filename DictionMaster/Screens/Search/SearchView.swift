@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct SearchView: View {
+    @ObservedObject var intent: Intent
+    
+    @State private var text = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            FlagView(language: .english)
+            Spacer()
+            InputWord(text: $text, placeholder: "Type your word..")
+            Spacer()
+            if !text.isEmpty {
+                Button(
+                    "SEARCH",
+                    action: {
+                        print("itsGood")
+                        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                    }
+                )
+                .buttonStyle(.primary)
+            }
+            
+        }
+        .padding(.init(top: 75, leading: 18, bottom: 20, trailing: 17))
     }
 }
 
 #Preview {
-    SearchView()
+    SearchView(intent: .init())
 }

@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var path = NavigationPath()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            SearchView(intent: .init())
         }
-        .padding()
     }
 }
 

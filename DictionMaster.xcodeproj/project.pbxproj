@@ -12,7 +12,11 @@
 		8503DB772B70867A005C91B9 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB762B70867A005C91B9 /* CacheStorage.swift */; };
 		8503DB7F2B709304005C91B9 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB7E2B709304005C91B9 /* SearchView.swift */; };
 		8503DB812B709323005C91B9 /* SearchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB802B709323005C91B9 /* SearchState.swift */; };
-		8503DB832B70932D005C91B9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB822B70932D005C91B9 /* SearchViewModel.swift */; };
+		8503DB832B70932D005C91B9 /* SearchIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB822B70932D005C91B9 /* SearchIntent.swift */; };
+		8503DB862B709573005C91B9 /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB852B709573005C91B9 /* FlagView.swift */; };
+		8503DB8A2B709F76005C91B9 /* InputWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB892B709F76005C91B9 /* InputWord.swift */; };
+		8503DB8E2B70ADBD005C91B9 /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB8D2B70ADBD005C91B9 /* UIScreen+.swift */; };
+		8503DB922B70B053005C91B9 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB912B70B053005C91B9 /* PrimaryButtonStyle.swift */; };
 		853233AA2B6E0BA900796931 /* Phonetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233A92B6E0BA900796931 /* Phonetic.swift */; };
 		853233AC2B6E0BBC00796931 /* Meaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233AB2B6E0BBC00796931 /* Meaning.swift */; };
 		853233AE2B6E0BDB00796931 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233AD2B6E0BDB00796931 /* Definition.swift */; };
@@ -22,7 +26,6 @@
 		8593CF242B6DDDC600613B07 /* GetWordDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF232B6DDDC600613B07 /* GetWordDefinitions.swift */; };
 		8593CF2A2B6DE5A600613B07 /* WordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF292B6DE5A600613B07 /* WordDefinition.swift */; };
 		8593CF522B6DE7AF00613B07 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8593CF4A2B6DE7AE00613B07 /* Data.framework */; };
-		8593CF572B6DE7AF00613B07 /* GetWordDefinitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF562B6DE7AF00613B07 /* GetWordDefinitionTests.swift */; };
 		8593CF582B6DE7AF00613B07 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 8593CF4C2B6DE7AE00613B07 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8593CF602B6DE7DD00613B07 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EC02D92B6DDBCE003B0206 /* Domain.framework */; };
 		8593CF612B6DE7DD00613B07 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85EC02D92B6DDBCE003B0206 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -86,7 +89,11 @@
 		8503DB762B70867A005C91B9 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		8503DB7E2B709304005C91B9 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		8503DB802B709323005C91B9 /* SearchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchState.swift; sourceTree = "<group>"; };
-		8503DB822B70932D005C91B9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		8503DB822B70932D005C91B9 /* SearchIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIntent.swift; sourceTree = "<group>"; };
+		8503DB852B709573005C91B9 /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
+		8503DB892B709F76005C91B9 /* InputWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputWord.swift; sourceTree = "<group>"; };
+		8503DB8D2B70ADBD005C91B9 /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
+		8503DB912B70B053005C91B9 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		853233A92B6E0BA900796931 /* Phonetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phonetic.swift; sourceTree = "<group>"; };
 		853233AB2B6E0BBC00796931 /* Meaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meaning.swift; sourceTree = "<group>"; };
 		853233AD2B6E0BDB00796931 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
@@ -98,7 +105,6 @@
 		8593CF4A2B6DE7AE00613B07 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8593CF4C2B6DE7AE00613B07 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		8593CF512B6DE7AE00613B07 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8593CF562B6DE7AF00613B07 /* GetWordDefinitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinitionTests.swift; sourceTree = "<group>"; };
 		85EC02812B6DCF3A003B0206 /* DictionMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85EC02842B6DCF3A003B0206 /* DictionMasterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionMasterApp.swift; sourceTree = "<group>"; };
 		85EC02862B6DCF3A003B0206 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -181,8 +187,9 @@
 		8503DB7B2B7092DB005C91B9 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				8503DB842B70955B005C91B9 /* Components */,
 				8503DB7E2B709304005C91B9 /* SearchView.swift */,
-				8503DB822B70932D005C91B9 /* SearchViewModel.swift */,
+				8503DB822B70932D005C91B9 /* SearchIntent.swift */,
 				8503DB802B709323005C91B9 /* SearchState.swift */,
 			);
 			path = Search;
@@ -200,6 +207,47 @@
 			children = (
 			);
 			path = Purchase;
+			sourceTree = "<group>";
+		};
+		8503DB842B70955B005C91B9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8503DB852B709573005C91B9 /* FlagView.swift */,
+				8503DB892B709F76005C91B9 /* InputWord.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8503DB8B2B70ADAB005C91B9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8503DB8C2B70ADB0005C91B9 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8503DB8C2B70ADB0005C91B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8503DB8D2B70ADBD005C91B9 /* UIScreen+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8503DB8F2B70B035005C91B9 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				8503DB902B70B03E005C91B9 /* ButtonStyles */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		8503DB902B70B03E005C91B9 /* ButtonStyles */ = {
+			isa = PBXGroup;
+			children = (
+				8503DB912B70B053005C91B9 /* PrimaryButtonStyle.swift */,
+			);
+			path = ButtonStyles;
 			sourceTree = "<group>";
 		};
 		853233A72B6E0B6D00796931 /* UseCases */ = {
@@ -261,7 +309,6 @@
 		8593CF552B6DE7AF00613B07 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				8593CF562B6DE7AF00613B07 /* GetWordDefinitionTests.swift */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -303,6 +350,8 @@
 		85EC02832B6DCF3A003B0206 /* DictionMaster */ = {
 			isa = PBXGroup;
 			children = (
+				8503DB8F2B70B035005C91B9 /* Design */,
+				8503DB8B2B70ADAB005C91B9 /* Utils */,
 				8503DB7A2B7092AA005C91B9 /* Screens */,
 				85EC02842B6DCF3A003B0206 /* DictionMasterApp.swift */,
 				85EC02862B6DCF3A003B0206 /* ContentView.swift */,
@@ -622,7 +671,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8593CF572B6DE7AF00613B07 /* GetWordDefinitionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,8 +678,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8503DB922B70B053005C91B9 /* PrimaryButtonStyle.swift in Sources */,
 				85EC02872B6DCF3A003B0206 /* ContentView.swift in Sources */,
-				8503DB832B70932D005C91B9 /* SearchViewModel.swift in Sources */,
+				8503DB8A2B709F76005C91B9 /* InputWord.swift in Sources */,
+				8503DB832B70932D005C91B9 /* SearchIntent.swift in Sources */,
+				8503DB8E2B70ADBD005C91B9 /* UIScreen+.swift in Sources */,
+				8503DB862B709573005C91B9 /* FlagView.swift in Sources */,
 				8503DB7F2B709304005C91B9 /* SearchView.swift in Sources */,
 				85EC02852B6DCF3A003B0206 /* DictionMasterApp.swift in Sources */,
 				8503DB812B709323005C91B9 /* SearchState.swift in Sources */,
