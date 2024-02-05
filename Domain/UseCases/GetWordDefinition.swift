@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol GetWordDefinition {
-    func get(word: String, completion: @escaping (Result<WordDefinitionModel, Error>) -> Void)
+    func getWordDefinition() async throws -> [WordDefinition]
 }
