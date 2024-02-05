@@ -61,21 +61,15 @@ struct ResultView: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
-                ResultHeaderView(title: "Hello", subtitle: "həˈləʊ")
-                
-                ForEach(meanings, id: \.self) { meaning in
-                    ForEach(meaning.definitions, id: \.self) { definition in
-                        Text(
-                            makeSemiLightBlueGrayLabel(meaning.partOfSpeech)
-                            + AttributedString(definition.definition)
-                        )
-                        Text(definition.definition)
-                        Text(definition.example)
-                    }
-                    
+                VStack(alignment: .leading) {
+                    ResultHeaderView(title: "Hello", subtitle: "həˈləʊ")
+                        .padding(.bottom, 25)
+                    WordDefinitionsList(meanings: meanings)
                 }
+                .padding(.init(top: 48, leading: 17, bottom: 30, trailing: 18))
                 
                 Divider()
+                
                 Text("That's All")
                 Button(
                     "SEARCH",
@@ -86,23 +80,8 @@ struct ResultView: View {
                 )
                 .buttonStyle(.primary)
             }
-            .padding(.init(top: 48, leading: 17, bottom: 31, trailing: 18))
             
         }.scrollBounceBehavior(.basedOnSize)
-    }
-    
-    private func makeSemiLightBlueGrayLabel(_ str: String) -> AttributedString {
-        var attrString = AttributedString("[\(str)] ")
-        attrString.font = .system(.callout, design: .rounded, weight: .bold)
-        attrString.foregroundColor = Color("color/semiLight_blue_gray")
-        return attrString
-    }
-    
-    private func makeDeepBlueText(_ str: String) -> AttributedString {
-        var attrString = AttributedString(str)
-        attrString.font = .system(.callout, design: .rounded, weight: .bold)
-        attrString.foregroundColor = Color("color/semiLight_blue_gray")
-        return attrString
     }
     
 }
