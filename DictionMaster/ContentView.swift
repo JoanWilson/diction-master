@@ -11,7 +11,7 @@ struct ContentView: View {
     @State var path = NavigationPath()
     var body: some View {
         NavigationStack {
-            SearchView(intent: .init())
+            ResultView()
         }
     }
 }
