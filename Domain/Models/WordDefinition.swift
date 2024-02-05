@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct WordDefinitionModel {
+public struct WordDefinition {
     public let word: String
     public let phonetic: String
     public let phonetics: [Phonetic]
