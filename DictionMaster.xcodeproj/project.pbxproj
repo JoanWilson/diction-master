@@ -17,12 +17,15 @@
 		8503DB8A2B709F76005C91B9 /* InputWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB892B709F76005C91B9 /* InputWord.swift */; };
 		8503DB8E2B70ADBD005C91B9 /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB8D2B70ADBD005C91B9 /* UIScreen+.swift */; };
 		8503DB922B70B053005C91B9 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB912B70B053005C91B9 /* PrimaryButtonStyle.swift */; };
+		8503DB9F2B7120CA005C91B9 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB9E2B7120CA005C91B9 /* ResultView.swift */; };
+		8503DBA22B7124EA005C91B9 /* ResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DBA12B7124EA005C91B9 /* ResultHeaderView.swift */; };
 		853233AA2B6E0BA900796931 /* Phonetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233A92B6E0BA900796931 /* Phonetic.swift */; };
 		853233AC2B6E0BBC00796931 /* Meaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233AB2B6E0BBC00796931 /* Meaning.swift */; };
 		853233AE2B6E0BDB00796931 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233AD2B6E0BDB00796931 /* Definition.swift */; };
 		853233B42B6E10A300796931 /* HttpGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233B32B6E10A300796931 /* HttpGetClient.swift */; };
 		853233B72B6E156400796931 /* GetWordDefinitionsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233B62B6E156400796931 /* GetWordDefinitionsError.swift */; };
 		853233B92B6E175100796931 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233B82B6E175100796931 /* HttpError.swift */; };
+		853A25722B71502400B31AA9 /* WordDefinitionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A25712B71502400B31AA9 /* WordDefinitionsList.swift */; };
 		8593CF242B6DDDC600613B07 /* GetWordDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF232B6DDDC600613B07 /* GetWordDefinitions.swift */; };
 		8593CF2A2B6DE5A600613B07 /* WordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593CF292B6DE5A600613B07 /* WordDefinition.swift */; };
 		8593CF522B6DE7AF00613B07 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8593CF4A2B6DE7AE00613B07 /* Data.framework */; };
@@ -94,12 +97,15 @@
 		8503DB892B709F76005C91B9 /* InputWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputWord.swift; sourceTree = "<group>"; };
 		8503DB8D2B70ADBD005C91B9 /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
 		8503DB912B70B053005C91B9 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		8503DB9E2B7120CA005C91B9 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		8503DBA12B7124EA005C91B9 /* ResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHeaderView.swift; sourceTree = "<group>"; };
 		853233A92B6E0BA900796931 /* Phonetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phonetic.swift; sourceTree = "<group>"; };
 		853233AB2B6E0BBC00796931 /* Meaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meaning.swift; sourceTree = "<group>"; };
 		853233AD2B6E0BDB00796931 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		853233B32B6E10A300796931 /* HttpGetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpGetClient.swift; sourceTree = "<group>"; };
 		853233B62B6E156400796931 /* GetWordDefinitionsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinitionsError.swift; sourceTree = "<group>"; };
 		853233B82B6E175100796931 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		853A25712B71502400B31AA9 /* WordDefinitionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionsList.swift; sourceTree = "<group>"; };
 		8593CF232B6DDDC600613B07 /* GetWordDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinitions.swift; sourceTree = "<group>"; };
 		8593CF292B6DE5A600613B07 /* WordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinition.swift; sourceTree = "<group>"; };
 		8593CF4A2B6DE7AE00613B07 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +204,8 @@
 		8503DB7C2B7092E7005C91B9 /* Result */ = {
 			isa = PBXGroup;
 			children = (
+				8503DBA02B7124C5005C91B9 /* Components */,
+				8503DB9E2B7120CA005C91B9 /* ResultView.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -248,6 +256,15 @@
 				8503DB912B70B053005C91B9 /* PrimaryButtonStyle.swift */,
 			);
 			path = ButtonStyles;
+			sourceTree = "<group>";
+		};
+		8503DBA02B7124C5005C91B9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8503DBA12B7124EA005C91B9 /* ResultHeaderView.swift */,
+				853A25712B71502400B31AA9 /* WordDefinitionsList.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		853233A72B6E0B6D00796931 /* UseCases */ = {
@@ -681,10 +698,13 @@
 				8503DB922B70B053005C91B9 /* PrimaryButtonStyle.swift in Sources */,
 				85EC02872B6DCF3A003B0206 /* ContentView.swift in Sources */,
 				8503DB8A2B709F76005C91B9 /* InputWord.swift in Sources */,
+				8503DBA22B7124EA005C91B9 /* ResultHeaderView.swift in Sources */,
 				8503DB832B70932D005C91B9 /* SearchIntent.swift in Sources */,
 				8503DB8E2B70ADBD005C91B9 /* UIScreen+.swift in Sources */,
 				8503DB862B709573005C91B9 /* FlagView.swift in Sources */,
 				8503DB7F2B709304005C91B9 /* SearchView.swift in Sources */,
+				853A25722B71502400B31AA9 /* WordDefinitionsList.swift in Sources */,
+				8503DB9F2B7120CA005C91B9 /* ResultView.swift in Sources */,
 				85EC02852B6DCF3A003B0206 /* DictionMasterApp.swift in Sources */,
 				8503DB812B709323005C91B9 /* SearchState.swift in Sources */,
 			);
