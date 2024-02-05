@@ -10,6 +10,7 @@ import SwiftUI
 struct InputWord: View {
     @Binding var text: String
     let placeholder: String
+    
     var body: some View {
         ZStack(alignment: .leading) {
             TextField("Type a word", text: $text, prompt: prompt, axis: .vertical)

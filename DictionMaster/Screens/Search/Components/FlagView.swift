@@ -30,7 +30,6 @@ struct FlagView: View {
             Text(language().uppercased())
                 .font(.system(.title3, design: .rounded, weight: .regular))
                 .foregroundStyle(Color("color/deep_blue"))
-                
         }
         .padding(.init(top: 6, leading: 8, bottom: 7, trailing: 12))
         .background(Color("color/light_blue_gray").opacity(0.1))

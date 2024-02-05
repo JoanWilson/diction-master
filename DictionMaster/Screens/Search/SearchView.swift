@@ -28,7 +28,6 @@ struct SearchView: View {
                 )
                 .buttonStyle(.primary)
             }
-            
         }
         .padding(.init(top: 75, leading: 18, bottom: 20, trailing: 17))
     }
