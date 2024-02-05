@@ -16,6 +16,6 @@ public class GetWordDefinitionsCache: GetWordDefinitions {
     }
     
     public func getWordDefinition() async throws -> [WordDefinition] {
-        
+        []
     }
 }

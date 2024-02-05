@@ -18,6 +18,6 @@ public class GetWordDefinitionsRemote: GetWordDefinitions {
     }
     
     public func getWordDefinition() async throws -> [WordDefinition] {
-        return 
+        []
     }
 }

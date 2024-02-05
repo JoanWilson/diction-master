@@ -10,6 +10,9 @@
 		8503DB6F2B7082B9005C91B9 /* GetWordDefinitionsRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB6E2B7082B9005C91B9 /* GetWordDefinitionsRemote.swift */; };
 		8503DB712B7082E1005C91B9 /* GetWordDefinitionsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB702B7082E1005C91B9 /* GetWordDefinitionsCache.swift */; };
 		8503DB772B70867A005C91B9 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB762B70867A005C91B9 /* CacheStorage.swift */; };
+		8503DB7F2B709304005C91B9 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB7E2B709304005C91B9 /* SearchView.swift */; };
+		8503DB812B709323005C91B9 /* SearchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB802B709323005C91B9 /* SearchState.swift */; };
+		8503DB832B70932D005C91B9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DB822B70932D005C91B9 /* SearchViewModel.swift */; };
 		853233AA2B6E0BA900796931 /* Phonetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233A92B6E0BA900796931 /* Phonetic.swift */; };
 		853233AC2B6E0BBC00796931 /* Meaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233AB2B6E0BBC00796931 /* Meaning.swift */; };
 		853233AE2B6E0BDB00796931 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853233AD2B6E0BDB00796931 /* Definition.swift */; };
@@ -81,6 +84,9 @@
 		8503DB6E2B7082B9005C91B9 /* GetWordDefinitionsRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinitionsRemote.swift; sourceTree = "<group>"; };
 		8503DB702B7082E1005C91B9 /* GetWordDefinitionsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinitionsCache.swift; sourceTree = "<group>"; };
 		8503DB762B70867A005C91B9 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
+		8503DB7E2B709304005C91B9 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		8503DB802B709323005C91B9 /* SearchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchState.swift; sourceTree = "<group>"; };
+		8503DB822B70932D005C91B9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		853233A92B6E0BA900796931 /* Phonetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phonetic.swift; sourceTree = "<group>"; };
 		853233AB2B6E0BBC00796931 /* Meaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meaning.swift; sourceTree = "<group>"; };
 		853233AD2B6E0BDB00796931 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
@@ -160,6 +166,40 @@
 				8503DB762B70867A005C91B9 /* CacheStorage.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		8503DB7A2B7092AA005C91B9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				8503DB7D2B7092F7005C91B9 /* Purchase */,
+				8503DB7C2B7092E7005C91B9 /* Result */,
+				8503DB7B2B7092DB005C91B9 /* Search */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		8503DB7B2B7092DB005C91B9 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8503DB7E2B709304005C91B9 /* SearchView.swift */,
+				8503DB822B70932D005C91B9 /* SearchViewModel.swift */,
+				8503DB802B709323005C91B9 /* SearchState.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		8503DB7C2B7092E7005C91B9 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		8503DB7D2B7092F7005C91B9 /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Purchase;
 			sourceTree = "<group>";
 		};
 		853233A72B6E0B6D00796931 /* UseCases */ = {
@@ -263,6 +303,7 @@
 		85EC02832B6DCF3A003B0206 /* DictionMaster */ = {
 			isa = PBXGroup;
 			children = (
+				8503DB7A2B7092AA005C91B9 /* Screens */,
 				85EC02842B6DCF3A003B0206 /* DictionMasterApp.swift */,
 				85EC02862B6DCF3A003B0206 /* ContentView.swift */,
 				85EC02882B6DCF3C003B0206 /* Assets.xcassets */,
@@ -590,7 +631,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				85EC02872B6DCF3A003B0206 /* ContentView.swift in Sources */,
+				8503DB832B70932D005C91B9 /* SearchViewModel.swift in Sources */,
+				8503DB7F2B709304005C91B9 /* SearchView.swift in Sources */,
 				85EC02852B6DCF3A003B0206 /* DictionMasterApp.swift in Sources */,
+				8503DB812B709323005C91B9 /* SearchState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
