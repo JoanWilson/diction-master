@@ -68,7 +68,19 @@ struct WordDefinitionsList: View {
             partOfSpeech: "exclamation",
             definitions: [
                 .init(
-                    definition: "dasd dsasd d dasd ",
+                    definition: "dasd dsasd dad ",
+                    example: "hdasd dasd !"
+                ),
+                .init(
+                    definition: "dasd dsas2222 ",
+                    example: "hdasd dasd !"
+                ),
+                .init(
+                    definition: "dasd dsa3333d ",
+                    example: "hdasd dasd !"
+                ),
+                .init(
+                    definition: "dasd dsa444d ",
                     example: "hdasd dasd !"
                 )
             ]
