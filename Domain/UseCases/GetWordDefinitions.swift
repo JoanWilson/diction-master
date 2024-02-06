@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol GetWordDefinitions {
-    func getWordDefinition() async throws -> [WordDefinition]
+    func getWordDefinition() async throws -> WordDefinition
 }
