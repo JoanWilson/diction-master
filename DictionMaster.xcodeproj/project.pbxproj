@@ -859,6 +859,7 @@
 			);
 			mainGroup = 85EC02782B6DCF3A003B0206;
 			packageReferences = (
+				8573D37B2B745033003A2C36 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 85EC02822B6DCF3A003B0206 /* Products */;
 			projectDirPath = "";
@@ -1760,6 +1761,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8573D37B2B745033003A2C36 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 21.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 85EC02792B6DCF3A003B0206 /* Project object */;
 }
