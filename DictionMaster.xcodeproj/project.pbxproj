@@ -36,6 +36,7 @@
 		85D685412B73B70100BBD7F3 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D685402B73B70100BBD7F3 /* Definition.swift */; };
 		85D685442B73B76D00BBD7F3 /* GetWordDefinitionsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D685432B73B76D00BBD7F3 /* GetWordDefinitionsDTO.swift */; };
 		85D685462B73B7CC00BBD7F3 /* GetWordDefinitionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D685452B73B7CC00BBD7F3 /* GetWordDefinitionError.swift */; };
+		85D685482B73B83E00BBD7F3 /* GetWordDefinitionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D685472B73B83E00BBD7F3 /* GetWordDefinitionUseCase.swift */; };
 		85EC02852B6DCF3A003B0206 /* DictionMasterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02842B6DCF3A003B0206 /* DictionMasterApp.swift */; };
 		85EC02872B6DCF3A003B0206 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02862B6DCF3A003B0206 /* ContentView.swift */; };
 		85EC02892B6DCF3C003B0206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85EC02882B6DCF3C003B0206 /* Assets.xcassets */; };
@@ -93,6 +94,7 @@
 		85D685402B73B70100BBD7F3 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		85D685432B73B76D00BBD7F3 /* GetWordDefinitionsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinitionsDTO.swift; sourceTree = "<group>"; };
 		85D685452B73B7CC00BBD7F3 /* GetWordDefinitionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinitionError.swift; sourceTree = "<group>"; };
+		85D685472B73B83E00BBD7F3 /* GetWordDefinitionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinitionUseCase.swift; sourceTree = "<group>"; };
 		85EC02812B6DCF3A003B0206 /* DictionMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85EC02842B6DCF3A003B0206 /* DictionMasterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionMasterApp.swift; sourceTree = "<group>"; };
 		85EC02862B6DCF3A003B0206 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 		85D685382B73B57C00BBD7F3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				85D685472B73B83E00BBD7F3 /* GetWordDefinitionUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				85D685412B73B70100BBD7F3 /* Definition.swift in Sources */,
 				85D6853B2B73B59900BBD7F3 /* WordDefinition.swift in Sources */,
 				85D6853D2B73B6C700BBD7F3 /* Phonetic.swift in Sources */,
+				85D685482B73B83E00BBD7F3 /* GetWordDefinitionUseCase.swift in Sources */,
 				85D685442B73B76D00BBD7F3 /* GetWordDefinitionsDTO.swift in Sources */,
 				85D6853F2B73B6E200BBD7F3 /* Meaning.swift in Sources */,
 			);
