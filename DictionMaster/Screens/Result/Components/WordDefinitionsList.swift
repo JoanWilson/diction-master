@@ -16,22 +16,22 @@ struct WordDefinitionsList: View {
                 
                 let meaning = self.meanings[index - 1]
                 
-                ForEach(meaning.definitions.enumerated().map { $0.offset + 1 }, id: \.self) { defIndex in
+                ForEach((meaning.definitions?.enumerated().map { $0.offset + 1 })!, id: \.self) { defIndex in
                     
-                    let definition = meaning.definitions[defIndex - 1]
+                    let definition = meaning.definitions![defIndex - 1]
                     
                     VStack(alignment: .leading) {
                         Text(
                             makeDeepBlueText(String(describing: index) + ") ") +
-                            makeSemiLightBlueGrayLabel(meaning.partOfSpeech) +
-                            makeDeepBlueText(definition.definition)
+                            makeSemiLightBlueGrayLabel(meaning.partOfSpeech!) 
+//                            makeDeepBlueText(definition.definition)
                         )
                         .padding(.bottom, 5)
-                        
-                        Text("• \(definition.example)")
-                            .font(.system(.callout, design: .rounded, weight: .regular))
-                            .foregroundStyle(Color("color/deep_blue"))
-                            .padding(.bottom, 30)
+//                        
+//                        Text("• \(definition.example)")
+//                            .font(.system(.callout, design: .rounded, weight: .regular))
+//                            .foregroundStyle(Color("color/deep_blue"))
+//                            .padding(.bottom, 30)
                     }
                 }
             }

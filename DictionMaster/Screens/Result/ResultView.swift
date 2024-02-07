@@ -7,55 +7,6 @@
 
 import SwiftUI
 
-public struct WordDefinition {
-    public let word: String
-    public let phonetic: String
-    let phonetics: [Phonetic]
-    public let origin: String
-    let meanings: [Meaning]
-    
-    init(word: String, phonetic: String, phonetics: [Phonetic], origin: String, meanings: [Meaning]) {
-        self.word = word
-        self.phonetic = phonetic
-        self.phonetics = phonetics
-        self.origin = origin
-        self.meanings = meanings
-    }
-}
-
-public struct Phonetic: Codable {
-    public let text: String
-    public let audio: String?
-}
-
-struct Meaning: Codable, Hashable {
-    let partOfSpeech: String
-    let definitions: [Definition]
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(partOfSpeech)
-        hasher.combine(definitions)
-    }
-    
-    static func == (lhs: Meaning, rhs: Meaning) -> Bool {
-        return lhs.partOfSpeech == rhs.partOfSpeech && lhs.definitions == rhs.definitions
-    }
-}
-
-struct Definition: Codable, Hashable {
-    let definition: String
-    let example: String
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(definition)
-        hasher.combine(example)
-    }
-    
-    static func == (lhs: Definition, rhs: Definition) -> Bool {
-        return lhs.definition == rhs.definition && lhs.example == rhs.example
-    }
-}
-
 struct ResultView: View {
     var wordDefinitions: [WordDefinition] = [.init(word: "Hello", phonetic: "həˈləʊ", phonetics: [.init(text: "hello", audio: "uai")], origin: "sei la", meanings: [
         Meaning(
@@ -86,14 +37,14 @@ struct ResultView: View {
                 VStack(alignment: .leading) {
                     ResultHeaderView(title: "Hello", subtitle: "həˈləʊ")
                         .padding(.bottom, 25)
-                    WordDefinitionsList(meanings: wordDefinitions[0].meanings)
+                    WordDefinitionsList(meanings: wordDefinitions[0].meanings ?? [Meaning(partOfSpeech: "None", definitions: [])])
                 }
                 .padding(.init(top: 48, leading: 20.5, bottom: 30, trailing: 18))
                 
                 Divider()
                 
                 VStack(alignment: .leading) {
-                    Text("That’s it for “\(wordDefinitions[0].word.lowercased())”!")
+                    Text("That’s it for “\(wordDefinitions[0].word?.lowercased() ?? "NotFound")”!")
                         .font(.system(.title2, design: .rounded, weight: .bold))
                         .foregroundStyle(Color("color/deep_blue"))
                         .padding(.top, 35.5)

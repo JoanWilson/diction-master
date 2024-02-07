@@ -7,11 +7,10 @@
 
 import Foundation
 
-enum SearchState {
-    case inital
-    case wordFound
-    case wordNotFound
-    case needsPurchase
-    case rateLimit
-    case serverError
+struct SearchState {
+    var wordDefinitionFound: WordDefinition
+    var mustBuySubscription: Bool = false
+    var showAlert: Bool = false
+    var errorFound: GetWordDefinitionsError
 }
+

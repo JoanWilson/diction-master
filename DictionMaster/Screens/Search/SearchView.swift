@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
-    @ObservedObject var intent: Intent
+    @StateObject var viewModel: ViewModel
     
     @State private var text = ""
     
@@ -22,17 +22,24 @@ struct SearchView: View {
                 Button(
                     "SEARCH",
                     action: {
-                        print("itsGood")
+                        Task {
+                            viewModel.searchWord(word: text)
+                        }
                         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                     }
                 )
                 .buttonStyle(.primary)
             }
         }
+        .alert("Error", isPresented: $viewModel.showAlert, actions: {
+            Button("OK", role: .cancel) {
+                viewModel.showAlert.toggle()
+            }
+        })
         .padding(.init(top: 75, leading: 18, bottom: 20, trailing: 17))
     }
 }
 
 #Preview {
-    SearchView(intent: .init())
+    SearchView(viewModel: .init(useCase: GetWordDefinitionsMock(shouldFail: true)))
 }
