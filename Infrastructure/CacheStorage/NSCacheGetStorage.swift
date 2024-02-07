@@ -8,7 +8,7 @@
 import Domain
 import Data
 
-public final class NSCacheGetStorage: CacheGetStorage {
+public final class NSCacheGetStorage: CacheRepository {
     private var wordDefinitionCache: NSCache<NSString, WordDefinition> = {
         let cache = NSCache<NSString, WordDefinition>()
         cache.countLimit = 100
@@ -19,10 +19,19 @@ public final class NSCacheGetStorage: CacheGetStorage {
     public init() {}
     
     public func get(_ word: String) -> WordDefinition? {
-        guard let wordDefinition = wordDefinitionCache.object(forKey: word as NSString) else {
+        guard let wordDefinition = wordDefinitionCache.object(
+            forKey: word.lowercased() as NSString
+        ) else {
             return nil
         }
         
         return wordDefinition
+    }
+    
+    public func save(_ word: String, wordDefinition: WordDefinition) {
+        wordDefinitionCache.setObject(
+            wordDefinition,
+            forKey: word.lowercased() as NSString
+        )
     }
 }

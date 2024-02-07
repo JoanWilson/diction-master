@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PurchaseView: View {
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         ScrollViewReader { scrollProxy in
             ScrollView {
@@ -18,7 +20,7 @@ struct PurchaseView: View {
                     Button(
                         "SUBSCRIBE",
                         action: {
-                            print("itsGood")
+                            dismiss()
                             UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                         }
                     )

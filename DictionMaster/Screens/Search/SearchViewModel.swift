@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Domain
 
 extension SearchView {
     @MainActor
@@ -17,9 +18,11 @@ extension SearchView {
         
         private var tasks: [Task<Void, Never>] = []
         
-        private let useCase: GetWordDefinition
+        private let useCase: GetWordDefinitionsUseCase
         
-        init(useCase: GetWordDefinition) {
+//        private var manager: Manager
+        
+        init(useCase: GetWordDefinitionsUseCase) {
             self.useCase = useCase
         }
         
@@ -31,8 +34,11 @@ extension SearchView {
         func searchWord(word: String) {
             let task = Task {
                 do {
-                    let dto = GetWordDefinitionsDTO(word: "hello", language: "en")
-                    wordDefinitionFound = try await useCase.searchWordDefinition(dto)
+                    let dto = GetWordDefinitionsDTO(word: word, language: "en")
+                    wordDefinitionFound = try await useCase.searchWordDefinitions(dto)
+                    print(wordDefinitionFound[0])
+                } catch GetWordDefinitionsError.mustBuySubscription {
+                    mustBuySubscription.toggle()
                 } catch {
                     showAlert.toggle()
                     print(error)
@@ -43,14 +49,14 @@ extension SearchView {
     }
 }
 
-class GetWordDefinitionsMock: GetWordDefinition {
+class GetWordDefinitionsMock: GetWordDefinitionsUseCase {
     var shouldFail: Bool = false
     
     init(shouldFail: Bool) {
         self.shouldFail = shouldFail
     }
     
-    func searchWordDefinition(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition] {
+    func searchWordDefinitions(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition] {
         if shouldFail {
             throw GetWordDefinitionsError.noWordDefinitions
         } else {

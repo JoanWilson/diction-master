@@ -6,13 +6,28 @@
 //
 
 import SwiftUI
+import Domain
+import Data
+import Infrastructure
 
 struct ContentView: View {
     @State var path = NavigationPath()
+    
     var body: some View {
         NavigationStack {
-            SearchView(viewModel: .init(useCase: GetWordDefinitionsRemote(session: MockHttpGetClient(), baseURLStr: "Any")))
+            createSearchView()
         }
+    }
+    
+    @MainActor func createSearchView() -> SearchView {
+        let client = URLSessionHttpClient()
+        let useCaseRemote: GetWordDefinitionsUseCase = GetWordDefinitionsRemote(client: client, baseURLStr: "https://api.dictionaryapi.dev/api/v2/entries/")
+        let cache: CacheGetStorage = NSCacheGetStorage()
+        let useCaseCache: GetWordDefinitionsUseCase = GetWordDefinitionsCache(cache: cache)
+        var viewModel = SearchView.ViewModel(useCase: useCaseRemote)
+        var view = SearchView(viewModel: viewModel)
+        
+        return view
     }
 }
 

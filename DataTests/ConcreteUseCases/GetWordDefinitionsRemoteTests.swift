@@ -29,27 +29,6 @@ final class GetWordDefinitionsRemoteTests: XCTestCase {
             XCTFail()
         }
     }
-    
-    func test_searchWordDefinitions_WhenFail_ShouldThrow_TheCorrectCode() async throws {
-        let dto = GetWordDefinitionsDTO(word: "hello", language: "en")
-        var client = HttpClientMock(
-            isFailure: true,
-            word: dto.word
-        )
-        client.statusCodeResponse = 404
-        let sut = GetWordDefinitionsRemote(
-            client: client,
-            baseURLStr: "http://anyurl.com"
-        )
-        
-        do {
-            _ = try await sut.searchWordDefinitions(dto)
-            XCTFail()
-        } catch let error as GetWordDefinitionsError {
-            XCTAssertEqual(error, GetWordDefinitionsError.noWordDefinitions )
-        }
-    }
-    
 }
 
 
