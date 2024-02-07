@@ -14,6 +14,7 @@ public enum GetWordDefinitionsError: Error {
     case serverError
     case dataCannotBeDecoded
     case unexpected
+    case noWordOnCache
 }
 
 public struct GetWordDefinitionErrorMessage: Codable {

@@ -20,6 +20,12 @@
 		85300B372B718FE100471E09 /* PurchaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85300B362B718FE100471E09 /* PurchaseHeader.swift */; };
 		85300B392B71A08B00471E09 /* PurchaseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85300B382B71A08B00471E09 /* PurchaseBody.swift */; };
 		853A25722B71502400B31AA9 /* WordDefinitionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A25712B71502400B31AA9 /* WordDefinitionsList.swift */; };
+		8573D2FC2B73FD6E003A2C36 /* CacheGetStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D2FB2B73FD6E003A2C36 /* CacheGetStorage.swift */; };
+		8573D2FE2B73FD7D003A2C36 /* CacheSaveStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D2FD2B73FD7D003A2C36 /* CacheSaveStorage.swift */; };
+		8573D3002B73FD9E003A2C36 /* CacheRemoveStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D2FF2B73FD9E003A2C36 /* CacheRemoveStorage.swift */; };
+		8573D3022B740127003A2C36 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D3012B740127003A2C36 /* CacheStorage.swift */; };
+		8573D3062B7402C4003A2C36 /* CacheGetStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D3052B7402C3003A2C36 /* CacheGetStorageMock.swift */; };
+		8573D3082B740397003A2C36 /* GetWordDefinitionsCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D3072B740397003A2C36 /* GetWordDefinitionsCacheTests.swift */; };
 		85D684F62B72A7D000BBD7F3 /* WordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D684F52B72A7D000BBD7F3 /* WordDefinition.swift */; };
 		85D684F82B72A85A00BBD7F3 /* GetWordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D684F72B72A85A00BBD7F3 /* GetWordDefinition.swift */; };
 		85D684FC2B72C29100BBD7F3 /* GetWordDefinitionsRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D684FB2B72C29100BBD7F3 /* GetWordDefinitionsRemote.swift */; };
@@ -128,6 +134,12 @@
 		85300B362B718FE100471E09 /* PurchaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHeader.swift; sourceTree = "<group>"; };
 		85300B382B71A08B00471E09 /* PurchaseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseBody.swift; sourceTree = "<group>"; };
 		853A25712B71502400B31AA9 /* WordDefinitionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionsList.swift; sourceTree = "<group>"; };
+		8573D2FB2B73FD6E003A2C36 /* CacheGetStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheGetStorage.swift; sourceTree = "<group>"; };
+		8573D2FD2B73FD7D003A2C36 /* CacheSaveStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheSaveStorage.swift; sourceTree = "<group>"; };
+		8573D2FF2B73FD9E003A2C36 /* CacheRemoveStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRemoveStorage.swift; sourceTree = "<group>"; };
+		8573D3012B740127003A2C36 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
+		8573D3052B7402C3003A2C36 /* CacheGetStorageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheGetStorageMock.swift; sourceTree = "<group>"; };
+		8573D3072B740397003A2C36 /* GetWordDefinitionsCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinitionsCacheTests.swift; sourceTree = "<group>"; };
 		85D684F52B72A7D000BBD7F3 /* WordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinition.swift; sourceTree = "<group>"; };
 		85D684F72B72A85A00BBD7F3 /* GetWordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinition.swift; sourceTree = "<group>"; };
 		85D684FB2B72C29100BBD7F3 /* GetWordDefinitionsRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetWordDefinitionsRemote.swift; path = DictionMaster/Domain/GetWordDefinitionsRemote.swift; sourceTree = SOURCE_ROOT; };
@@ -335,6 +347,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		8573D2FA2B73F991003A2C36 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
 		8593CF5F2B6DE7DD00613B07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +496,7 @@
 		85D6854F2B73B88000BBD7F3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8573D2FA2B73F991003A2C36 /* Validation */,
 				85D6856E2B73B95800BBD7F3 /* CacheStorage */,
 				85D6856D2B73B94F00BBD7F3 /* HttpClient */,
 				85D685682B73B91500BBD7F3 /* ConcreteUseCases */,
@@ -517,6 +537,10 @@
 		85D6856E2B73B95800BBD7F3 /* CacheStorage */ = {
 			isa = PBXGroup;
 			children = (
+				8573D2FB2B73FD6E003A2C36 /* CacheGetStorage.swift */,
+				8573D2FD2B73FD7D003A2C36 /* CacheSaveStorage.swift */,
+				8573D2FF2B73FD9E003A2C36 /* CacheRemoveStorage.swift */,
+				8573D3012B740127003A2C36 /* CacheStorage.swift */,
 			);
 			path = CacheStorage;
 			sourceTree = "<group>";
@@ -525,6 +549,7 @@
 			isa = PBXGroup;
 			children = (
 				85D685782B73BC8600BBD7F3 /* GetWordDefinitionsRemoteTests.swift */,
+				8573D3072B740397003A2C36 /* GetWordDefinitionsCacheTests.swift */,
 			);
 			path = ConcreteUseCases;
 			sourceTree = "<group>";
@@ -534,6 +559,7 @@
 			children = (
 				85D6857B2B73BF1400BBD7F3 /* HttpClientMock.swift */,
 				85D6857D2B73BF3E00BBD7F3 /* WordDefinitionsMock.swift */,
+				8573D3052B7402C3003A2C36 /* CacheGetStorageMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -988,11 +1014,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8573D3002B73FD9E003A2C36 /* CacheRemoveStorage.swift in Sources */,
 				85D685742B73BB0A00BBD7F3 /* HttpClient.swift in Sources */,
+				8573D3022B740127003A2C36 /* CacheStorage.swift in Sources */,
+				8573D2FE2B73FD7D003A2C36 /* CacheSaveStorage.swift in Sources */,
 				85D6856C2B73B94300BBD7F3 /* GetWordDefinitionsCache.swift in Sources */,
 				85D6856A2B73B93700BBD7F3 /* GetWordDefinitionsRemote.swift in Sources */,
 				85D685722B73BA8500BBD7F3 /* HttpDecoder.swift in Sources */,
 				85D685762B73BC3600BBD7F3 /* HttpError.swift in Sources */,
+				8573D2FC2B73FD6E003A2C36 /* CacheGetStorage.swift in Sources */,
 				85D685702B73BA7900BBD7F3 /* HttpGetClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1001,9 +1031,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8573D3062B7402C4003A2C36 /* CacheGetStorageMock.swift in Sources */,
 				85D6857C2B73BF1400BBD7F3 /* HttpClientMock.swift in Sources */,
 				85D6857E2B73BF3E00BBD7F3 /* WordDefinitionsMock.swift in Sources */,
 				85D685792B73BC8600BBD7F3 /* GetWordDefinitionsRemoteTests.swift in Sources */,
+				8573D3082B740397003A2C36 /* GetWordDefinitionsCacheTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 
 import Domain
 
-public class GetWordDefinitionsRemote: GetWordDefinitionsUseCase {
+public final class GetWordDefinitionsRemote: GetWordDefinitionsUseCase {
     private let client: HttpClient
     private let baseURLStr: String
     
