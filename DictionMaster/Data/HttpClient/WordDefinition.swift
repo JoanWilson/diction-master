@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct WordDefinition: Codable {
+public class WordDefinition: Codable {
     public let word: String?
     public let phonetic: String?
     public let phonetics: [Phonetic]?
