@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol GetWordDefinition {
-    func searchWordDefinition(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition]
+public protocol GetWordDefinitionsUseCase {
+    func searchWordDefinitions(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition]
 }

@@ -7,11 +7,12 @@
 
 import Foundation
 
-enum GetWordDefinitionsError: Error {
+public enum GetWordDefinitionsError: Error {
     case mustBuySubscription
     case noWordDefinitions
     case serverRateLimit
     case serverError
+    case dataCannotBeDecoded
     case unexpected
 }
 
