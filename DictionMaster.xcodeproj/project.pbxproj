@@ -23,6 +23,10 @@
 		855F86182B75415E0038950F /* ResultBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86172B75415E0038950F /* ResultBottomView.swift */; };
 		855F861A2B7563620038950F /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86192B7563620038950F /* View+.swift */; };
 		855F86212B756E580038950F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 855F86202B756E580038950F /* LaunchScreen.storyboard */; };
+		855F86232B7574280038950F /* ResultWordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86222B7574280038950F /* ResultWordDefinition.swift */; };
+		855F86252B7577400038950F /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86242B7577400038950F /* ResultViewModel.swift */; };
+		855F86272B75854A0038950F /* CacheRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86262B75854A0038950F /* CacheRepositoryMock.swift */; };
+		855F86292B7585B90038950F /* UserCreditRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86282B7585B90038950F /* UserCreditRepositoryMock.swift */; };
 		8573D3022B740127003A2C36 /* CacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D3012B740127003A2C36 /* CacheRepository.swift */; };
 		8573D30A2B74077E003A2C36 /* URLSessionHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D3092B74077E003A2C36 /* URLSessionHttpClient.swift */; };
 		8573D30B2B74079D003A2C36 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D6854E2B73B88000BBD7F3 /* Data.framework */; };
@@ -188,6 +192,10 @@
 		855F86172B75415E0038950F /* ResultBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBottomView.swift; sourceTree = "<group>"; };
 		855F86192B7563620038950F /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		855F86202B756E580038950F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		855F86222B7574280038950F /* ResultWordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultWordDefinition.swift; sourceTree = "<group>"; };
+		855F86242B7577400038950F /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		855F86262B75854A0038950F /* CacheRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRepositoryMock.swift; sourceTree = "<group>"; };
+		855F86282B7585B90038950F /* UserCreditRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreditRepositoryMock.swift; sourceTree = "<group>"; };
 		8573D3012B740127003A2C36 /* CacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRepository.swift; sourceTree = "<group>"; };
 		8573D3092B74077E003A2C36 /* URLSessionHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHttpClient.swift; sourceTree = "<group>"; };
 		8573D3102B74091B003A2C36 /* NSCacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCacheRepository.swift; sourceTree = "<group>"; };
@@ -322,6 +330,7 @@
 			children = (
 				8503DBA02B7124C5005C91B9 /* Components */,
 				8503DB9E2B7120CA005C91B9 /* ResultView.swift */,
+				855F86242B7577400038950F /* ResultViewModel.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -439,6 +448,7 @@
 				85D6853C2B73B6C700BBD7F3 /* Phonetic.swift */,
 				85D6853E2B73B6E200BBD7F3 /* Meaning.swift */,
 				85D685402B73B70100BBD7F3 /* Definition.swift */,
+				855F86222B7574280038950F /* ResultWordDefinition.swift */,
 			);
 			path = WordDefinition;
 			sourceTree = "<group>";
@@ -570,6 +580,8 @@
 			children = (
 				85D6857B2B73BF1400BBD7F3 /* HttpClientMock.swift */,
 				85D6857D2B73BF3E00BBD7F3 /* WordDefinitionsMock.swift */,
+				855F86262B75854A0038950F /* CacheRepositoryMock.swift */,
+				855F86282B7585B90038950F /* UserCreditRepositoryMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1013,6 +1025,7 @@
 				85D685412B73B70100BBD7F3 /* Definition.swift in Sources */,
 				85D6853B2B73B59900BBD7F3 /* WordDefinition.swift in Sources */,
 				85D6853D2B73B6C700BBD7F3 /* Phonetic.swift in Sources */,
+				855F86232B7574280038950F /* ResultWordDefinition.swift in Sources */,
 				8573D38E2B745413003A2C36 /* UserCredit.swift in Sources */,
 				85D685482B73B83E00BBD7F3 /* GetWordDefinitionUseCase.swift in Sources */,
 				85D685442B73B76D00BBD7F3 /* GetWordDefinitionsDTO.swift in Sources */,
@@ -1038,6 +1051,8 @@
 			files = (
 				85D6857C2B73BF1400BBD7F3 /* HttpClientMock.swift in Sources */,
 				85D6857E2B73BF3E00BBD7F3 /* WordDefinitionsMock.swift in Sources */,
+				855F86292B7585B90038950F /* UserCreditRepositoryMock.swift in Sources */,
+				855F86272B75854A0038950F /* CacheRepositoryMock.swift in Sources */,
 				85D685792B73BC8600BBD7F3 /* GetWordDefinitionsRemoteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1065,6 +1080,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85300B392B71A08B00471E09 /* PurchaseBody.swift in Sources */,
+				855F86252B7577400038950F /* ResultViewModel.swift in Sources */,
 				8503DB922B70B053005C91B9 /* PrimaryButtonStyle.swift in Sources */,
 				85EC02872B6DCF3A003B0206 /* ContentView.swift in Sources */,
 				855F86162B753EEB0038950F /* AppFactory.swift in Sources */,
