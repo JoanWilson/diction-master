@@ -47,7 +47,7 @@ extension SearchView {
         
         private func convertToResultWordDefinition(_ wordDefinition: WordDefinition) -> ResultWordDefinition {
             let title = wordDefinition.word ?? ""
-            let phoneticText = wordDefinition.phonetic ?? ""
+            let phoneticText = wordDefinition.phonetics?.first?.text ?? ""
             let audioURLStr = wordDefinition.phonetics?.first?.audio ?? ""
             let definitions = wordDefinition.meanings?.flatMap { meaning -> [ResultDefinition] in
                 meaning.definitions?.map { definition -> ResultDefinition in

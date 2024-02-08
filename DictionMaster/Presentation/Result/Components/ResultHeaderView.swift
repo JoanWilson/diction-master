@@ -13,6 +13,8 @@ struct ResultHeaderView: View {
     let title: String
     let subtitle: String
     
+    let playSound: () -> Void
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 13) {
             Text(title.capitalized)
@@ -21,6 +23,7 @@ struct ResultHeaderView: View {
             
             HStack {
                 Button {
+                    playSound()
                 } label: {
                     Image("icon/speaker")
                         .resizable()
@@ -31,7 +34,7 @@ struct ResultHeaderView: View {
                         .clipShape(.circle)
                 }
                 
-                Text("/\(subtitle)/")
+                Text("\(subtitle)")
                     .font(.system(.title2, design: .rounded, weight: .bold))
                     .foregroundStyle(Color("color/deep_blue").opacity(0.4))
             }
@@ -40,5 +43,7 @@ struct ResultHeaderView: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    ResultHeaderView(title: "Hello", subtitle: "həˈləʊ")
+    ResultHeaderView(title: "Hello", subtitle: "həˈləʊ") {
+        
+    }
 }

@@ -1,9 +1,9 @@
-////
-////  SearchView.swift
-////  DictionMaster
-////
-////  Created by Joan Wilson Oliveira on 05/02/24.
-////
+//
+//  SearchView.swift
+//  DictionMaster
+//
+//  Created by Joan Wilson Oliveira on 05/02/24.
+//
 //
 import SwiftUI
 import Domain
@@ -40,7 +40,11 @@ struct SearchView: View {
                 PurchaseView()
             })
             .fullScreenCover(isPresented: $viewModel.showResultView, content: {
-                ResultView(model: viewModel.getResultWordDefinition())
+                ResultView(
+                    viewModel: ResultView.ViewModel(
+                        model: viewModel.getResultWordDefinition()
+                    )
+                )
             })
             .padding(.init(top: 75, leading: 18, bottom: 20, trailing: 17))
         }

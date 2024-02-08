@@ -33,7 +33,7 @@ public final class GetWordDefinitionsRemote: GetWordDefinitionsUseCase {
     
     private func userCreditFlow(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition] {
         guard var userCredit = userCreditRepository.loadUserCredit() else {
-            let userCredit = UserCredit(isPaidUser: false, dayTime: Date(), credits: 4000)
+            let userCredit = UserCredit(isPaidUser: false, dayTime: Date(), credits: 4)
             userCreditRepository.saveUserCredit(userCredit)
             return try await performRequest(dto)
         }
@@ -42,7 +42,7 @@ public final class GetWordDefinitionsRemote: GetWordDefinitionsUseCase {
             return try await performRequest(dto)
         }
         
-        if userCredit.credits >= 0 {
+        if userCredit.credits > 0 {
             userCredit.credits -= 1
             userCreditRepository.updateUserCredit(userCredit)
             return try await performRequest(dto)

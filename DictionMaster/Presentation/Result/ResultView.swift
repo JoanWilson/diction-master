@@ -1,54 +1,50 @@
-//////
-//////  ResultView.swift
-//////  DictionMaster
-//////
-//////  Created by Joan Wilson Oliveira on 05/02/24.
-//////
-////
+//
+// ResultView.swift
+// DictionMaster
+//
+// Created by Joan Wilson Oliveira on 05/02/24.
+//
+
 import Domain
 import SwiftUI
-
-struct ResultWordDefinition {
-    let title: String
-    let phonetic: String
-    let audioURLStr: String
-    let definitions: [ResultDefinition]
-}
-
-struct ResultDefinition: Hashable {
-    let partOfSpeech: String
-    let definition: String
-    let example: String
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(partOfSpeech)
-        hasher.combine(definition)
-        hasher.combine(example)
-    }
-}
+import AVFoundation
 
 struct ResultView: View {
     @Environment(\.dismiss) var dismiss
+    @StateObject private var viewModel: ViewModel
     
-    let model: ResultWordDefinition
-
+    init(viewModel: ViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
-                    ResultHeaderView(title: model.title, subtitle: model.phonetic)
-                        .padding(.bottom, 25)
-                    WordDefinitionsList(definitions: model.definitions)
+                    ResultHeaderView(
+                        title: viewModel.model.title,
+                        subtitle: viewModel.model.phonetic
+                    ) {
+                        viewModel.playSound()
+                    }
+                    .padding(.bottom, 25)
+                    .alert("There is no sound available", isPresented: $viewModel.invalidPlayer) {
+                        Button("OK", role: .cancel) {
+                            viewModel.invalidPlayer.toggle()
+                        }
+                    }
+                    
+                    WordDefinitionsList(definitions: viewModel.model.definitions)
                 }
                 .padding(.init(top: 48, leading: 20.5, bottom: 30, trailing: 18))
-
+                
                 Divider()
-
-                ResultBottomView(word: model.title)
+                
+                ResultBottomView(word: viewModel.model.title)
                     .padding(.horizontal, 20.5)
-
+                
                 Spacer()
-
+                
                 Button(
                     "NEW SEARCH",
                     action: {
@@ -64,22 +60,3 @@ struct ResultView: View {
     }
 }
 
-func createMockResultWordDefinition() -> ResultWordDefinition {
-    let definitions = [
-        ResultDefinition(partOfSpeech: "noun", definition: "the action of being affected", example: "the effect of the medicine"),
-        ResultDefinition(partOfSpeech: "verb", definition: "to have an effect on", example: "the medicine had an effect on her condition")
-    ]
-
-    let mockResultWordDefinition = ResultWordDefinition(
-        title: "effect",
-        phonetic: "ɪˈfɛkt",
-        audioURLStr: "https://example.com/audio/effect.mp3",
-        definitions: definitions
-    )
-
-    return mockResultWordDefinition
-}
-
-#Preview {
-    ResultView(model: createMockResultWordDefinition())
-}
