@@ -12,35 +12,40 @@ struct SearchView: View {
     @StateObject var viewModel: ViewModel
     
     var body: some View {
-        VStack {
-            FlagView(language: .english)
-            Spacer()
-            InputWord(text: $viewModel.text, placeholder: "Type your word..")
-            Spacer()
-            if !viewModel.text.isEmpty {
-                Button(
-                    "SEARCH",
-                    action: {
-                        Task {
-                            viewModel.searchWord(word: viewModel.text)
+        NavigationStack {
+            VStack {
+                FlagView(language: .english)
+                Spacer()
+                InputWord(text: $viewModel.text, placeholder: "Type your word..")
+                Spacer()
+                if !viewModel.text.isEmpty {
+                    Button(
+                        "SEARCH",
+                        action: {
+                            Task {
+                                viewModel.searchWord(word: viewModel.text)
+                            }
+                            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                         }
-                        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-                    }
-                )
-                .buttonStyle(.primary)
+                    )
+                    .buttonStyle(.primary)
+                }
             }
+            .alert("Couldn't find that word.", isPresented: $viewModel.showAlert, actions: {
+                Button("OK", role: .cancel) {
+                    viewModel.showAlert.toggle()
+                }
+            })
+            .fullScreenCover(isPresented: $viewModel.mustBuySubscription, content: {
+                PurchaseView()
+            })
+            .fullScreenCover(isPresented: $viewModel.showResultView, content: {
+                ResultView(model: viewModel.getResultWordDefinition())
+            })
+            .padding(.init(top: 75, leading: 18, bottom: 20, trailing: 17))
         }
-        .alert("Error", isPresented: $viewModel.showAlert, actions: {
-            Button("OK", role: .cancel) {
-                viewModel.showAlert.toggle()
-            }
-        })
-        .fullScreenCover(isPresented: $viewModel.mustBuySubscription, content: {
-            PurchaseView()
-        })
-        .fullScreenCover(isPresented: $viewModel.showResultView, content: {
-            ResultView(model: viewModel.getResultWordDefinition())
-        })
-        .padding(.init(top: 75, leading: 18, bottom: 20, trailing: 17))
+        .onTapGesture {
+            hideKeyboard()
+        }
     }
 }
