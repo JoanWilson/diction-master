@@ -24,7 +24,10 @@ public final class URLSessionHttpClient: HttpClient {
         return (data, response)
     }
     
-    public func decodeData<T>(type: T.Type, from data: Data) throws -> T where T : Decodable, T : Encodable {
+    public func decodeData<T>(
+        type: T.Type,
+        from data: Data
+    ) throws -> T where T: Decodable, T: Encodable {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
@@ -35,5 +38,3 @@ public final class URLSessionHttpClient: HttpClient {
         }
     }
 }
-
-

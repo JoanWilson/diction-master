@@ -18,23 +18,26 @@ public struct UserCredit: Codable {
         self.credits = credits
     }
     
-    public mutating func checkAndResetDay() {
+    public mutating func checkAndResetDay() -> Bool {
         guard let dayTime = dayTime else {
-            return
+            return false
         }
         
         let calendar = Calendar.current
         let now = Date()
         let nextDayStart = calendar.date(
-            bySettingHour:  0,
-            minute:  0,
-            second:  0,
+            bySettingHour: 0,
+            minute: 0,
+            second: 0,
             of: dayTime.addingTimeInterval(24*60*60)
         )!
         
         if now >= nextDayStart {
             self.dayTime = now
+            self.credits = 5
+            return true
         }
+        
+        return false
     }
 }
-

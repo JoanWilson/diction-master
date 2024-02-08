@@ -13,6 +13,8 @@ public final class KeychainUserCreditRepository: UseCreditRepository {
     private let serviceName = "com.yourapp.usercredit"
     private let accountName = "UserCredit"
 
+    public init() {}
+    
     public func saveUserCredit(_ userCredit: UserCredit) {
         let encoder = JSONEncoder()
         if let encodedData = try? encoder.encode(userCredit) {

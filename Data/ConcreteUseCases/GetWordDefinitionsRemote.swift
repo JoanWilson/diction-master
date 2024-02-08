@@ -11,47 +11,62 @@ public final class GetWordDefinitionsRemote: GetWordDefinitionsUseCase {
     private let client: HttpClient
     private let baseURLStr: String
     private let cache: CacheRepository
-    private let secureRepository: SecureRepository
+    private let userCreditRepository: UseCreditRepository
     
     public init(client: HttpClient, 
                 baseURLStr: String,
                 cache: CacheRepository,
-                secureRepository: SecureRepository) {
+                userCreditRepository: UseCreditRepository) {
         self.client = client
         self.baseURLStr = baseURLStr
         self.cache = cache
-        self.secureRepository = secureRepository
+        self.userCreditRepository = userCreditRepository
     }
     
     public func searchWordDefinitions(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition] {
-        
-        // Checar se existe no cache
         if let wordDefinition = cache.get(dto.word) {
             return [wordDefinition]
         }
         
-        //Checar se o usuario possui inscrição
-        secureRepository.getData(forKey: "user")
-        
-        
-        
-        
-        
-        
-        if let wordDefinition = cache.get(dto.word) {
-            return [wordDefinition]
-        } else {
-            let urlRequest = try makeRequest(dto)
-            let (data, response) = try await client.getRequest(urlRequest)
-            try statusCodeValidation(response.statusCode)
-            let wordDefinition = try client.decodeData(type: [WordDefinition].self, from: data)
-            
-            if let word = wordDefinition[0].word {
-                cache.save(word, wordDefinition: wordDefinition[0])
-            }
-            
-            return wordDefinition
+        return try await userCreditFlow(dto)
+    }
+    
+    private func userCreditFlow(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition] {
+        guard var userCredit = userCreditRepository.loadUserCredit() else {
+            let userCredit = UserCredit(isPaidUser: false, dayTime: Date(), credits: 4)
+            userCreditRepository.saveUserCredit(userCredit)
+            return try await performRequest(dto)
         }
+        
+        if userCredit.isPaidUser {
+            return try await performRequest(dto)
+        }
+        
+        if userCredit.credits >= 0 {
+            userCredit.credits -= 1
+            userCreditRepository.updateUserCredit(userCredit)
+            return try await performRequest(dto)
+        }
+        
+        if userCredit.checkAndResetDay() {
+            userCreditRepository.updateUserCredit(userCredit)
+            return try await performRequest(dto)
+        }
+        
+        throw GetWordDefinitionsError.mustBuySubscription
+    }
+    
+    private func performRequest(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition] {
+        let urlRequest = try makeRequest(dto)
+        let (data, response) = try await client.getRequest(urlRequest)
+        try statusCodeValidation(response.statusCode)
+        let wordDefinition = try client.decodeData(type: [WordDefinition].self, from: data)
+        
+        if let word = wordDefinition[0].word {
+            cache.save(word, wordDefinition: wordDefinition[0])
+        }
+        
+        return wordDefinition
     }
     
     private func makeRequest(_ dto: GetWordDefinitionsDTO) throws -> URLRequest {

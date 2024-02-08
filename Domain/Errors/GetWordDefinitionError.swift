@@ -16,6 +16,7 @@ public enum GetWordDefinitionsError: Error {
     case unexpected
     case noWordOnCache
     case noResponse
+    case noUserCredit
 }
 
 public struct GetWordDefinitionErrorMessage: Codable {

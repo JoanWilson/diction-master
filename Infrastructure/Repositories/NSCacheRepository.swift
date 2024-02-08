@@ -8,7 +8,7 @@
 import Domain
 import Data
 
-public final class NSCacheGetStorage: CacheRepository {
+public final class NSCacheRepository: CacheRepository {
     private var wordDefinitionCache: NSCache<NSString, WordDefinition> = {
         let cache = NSCache<NSString, WordDefinition>()
         cache.countLimit = 100
