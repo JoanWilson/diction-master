@@ -12,12 +12,8 @@ import Infrastructure
 import Security
 
 struct ContentView: View {
-    @State var path = NavigationPath()
-    
     var body: some View {
-        NavigationStack {
-            AppFactory.makeBuildApp()
-        }
+        AppFactory.makeBuildApp()
     }
 }
 
