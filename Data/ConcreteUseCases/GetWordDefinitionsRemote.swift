@@ -11,16 +11,32 @@ public final class GetWordDefinitionsRemote: GetWordDefinitionsUseCase {
     private let client: HttpClient
     private let baseURLStr: String
     private let cache: CacheRepository
+    private let secureRepository: SecureRepository
     
     public init(client: HttpClient, 
                 baseURLStr: String,
-                cache: CacheRepository) {
+                cache: CacheRepository,
+                secureRepository: SecureRepository) {
         self.client = client
         self.baseURLStr = baseURLStr
         self.cache = cache
+        self.secureRepository = secureRepository
     }
     
     public func searchWordDefinitions(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition] {
+        
+        // Checar se existe no cache
+        if let wordDefinition = cache.get(dto.word) {
+            return [wordDefinition]
+        }
+        
+        //Checar se o usuario possui inscrição
+        secureRepository.getData(forKey: "user")
+        
+        
+        
+        
+        
         
         if let wordDefinition = cache.get(dto.word) {
             return [wordDefinition]
