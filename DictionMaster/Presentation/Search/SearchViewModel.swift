@@ -15,13 +15,12 @@ extension SearchView {
         @Published var mustBuySubscription: Bool = false
         @Published var showAlert: Bool = false
         @Published var errorFound: GetWordDefinitionsError = .unexpected
-        
+        @Published var showResultView: Bool = false
+        @Published var text = ""
         private var tasks: [Task<Void, Never>] = []
         
         private let useCase: GetWordDefinitionsUseCase
-        
-//        private var manager: Manager
-        
+
         init(useCase: GetWordDefinitionsUseCase) {
             self.useCase = useCase
         }
@@ -36,40 +35,40 @@ extension SearchView {
                 do {
                     let dto = GetWordDefinitionsDTO(word: word, language: "en")
                     wordDefinitionFound = try await useCase.searchWordDefinitions(dto)
-                    print(wordDefinitionFound[0])
+                    showResultView.toggle()
                 } catch GetWordDefinitionsError.mustBuySubscription {
                     mustBuySubscription.toggle()
                 } catch {
                     showAlert.toggle()
-                    print(error)
                 }
             }
             tasks.append(task)
         }
-    }
-}
-
-class GetWordDefinitionsMock: GetWordDefinitionsUseCase {
-    var shouldFail: Bool = false
-    
-    init(shouldFail: Bool) {
-        self.shouldFail = shouldFail
-    }
-    
-    func searchWordDefinitions(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition] {
-        if shouldFail {
-            throw GetWordDefinitionsError.noWordDefinitions
-        } else {
-            let phonetic = Phonetic(text: "mock phonetic", audio: nil)
-                let meaning = Meaning(partOfSpeech: "noun", definitions: [Definition(definition: "a term", example: "mock example")])
-                let mockWordDefinition = WordDefinition(
-                    word: "example",
-                    phonetic: "mock phonetic",
-                    phonetics: [phonetic],
-                    origin: "unknown",
-                    meanings: [meaning]
-                )
-            return [mockWordDefinition]
+        
+        private func convertToResultWordDefinition(_ wordDefinition: WordDefinition) -> ResultWordDefinition {
+            let title = wordDefinition.word ?? ""
+            let phoneticText = wordDefinition.phonetic ?? ""
+            let audioURLStr = wordDefinition.phonetics?.first?.audio ?? ""
+            let definitions = wordDefinition.meanings?.flatMap { meaning -> [ResultDefinition] in
+                meaning.definitions?.map { definition -> ResultDefinition in
+                    ResultDefinition(
+                        partOfSpeech: meaning.partOfSpeech ?? "",
+                        definition: definition.definition ?? "",
+                        example: definition.example ?? ""
+                    )
+                } ?? []
+            } ?? []
+            
+            return ResultWordDefinition(
+                title: title,
+                phonetic: phoneticText,
+                audioURLStr: audioURLStr,
+                definitions: definitions
+            )
+        }
+        
+        public func getResultWordDefinition() -> ResultWordDefinition {
+            return convertToResultWordDefinition(wordDefinitionFound[0])
         }
     }
 }

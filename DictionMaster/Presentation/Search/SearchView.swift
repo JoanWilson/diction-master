@@ -11,20 +11,18 @@ import Domain
 struct SearchView: View {
     @StateObject var viewModel: ViewModel
     
-    @State private var text = ""
-    
     var body: some View {
         VStack {
             FlagView(language: .english)
             Spacer()
-            InputWord(text: $text, placeholder: "Type your word..")
+            InputWord(text: $viewModel.text, placeholder: "Type your word..")
             Spacer()
-            if !text.isEmpty {
+            if !viewModel.text.isEmpty {
                 Button(
                     "SEARCH",
                     action: {
                         Task {
-                            viewModel.searchWord(word: text)
+                            viewModel.searchWord(word: viewModel.text)
                         }
                         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                     }
@@ -39,6 +37,9 @@ struct SearchView: View {
         })
         .fullScreenCover(isPresented: $viewModel.mustBuySubscription, content: {
             PurchaseView()
+        })
+        .fullScreenCover(isPresented: $viewModel.showResultView, content: {
+            ResultView(model: viewModel.getResultWordDefinition())
         })
         .padding(.init(top: 75, leading: 18, bottom: 20, trailing: 17))
     }

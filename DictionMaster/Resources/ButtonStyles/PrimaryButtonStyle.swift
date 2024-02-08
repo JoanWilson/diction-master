@@ -15,6 +15,11 @@ struct PrimaryButtonStyle: ButtonStyle {
             .foregroundStyle(Color("color/white"))
             .font(.system(.title3, design: .rounded, weight: .bold))
             .clipShape(.rect(cornerRadius: 14))
+            .scaleEffect(configuration.isPressed ?  0.95 :  1.0)
+            .animation(
+                .easeInOut(duration: 0.1),
+                value: configuration.isPressed
+            )
     }
 }
 

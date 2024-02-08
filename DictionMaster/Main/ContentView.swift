@@ -16,25 +16,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            createSearchView()
+            AppFactory.makeBuildApp()
         }
-    }
-    
-    @MainActor func createSearchView() -> SearchView {
-        let client = URLSessionHttpClient()
-        let baseUrl = "https://api.dictionaryapi.dev/api/v2/entries/"
-        let cache = NSCacheRepository()
-        let userCreditRepository = KeychainUserCreditRepository()
-        let useCaseRemote: GetWordDefinitionsUseCase = GetWordDefinitionsRemote(
-            client: client,
-            baseURLStr: baseUrl,
-            cache: cache,
-            userCreditRepository: userCreditRepository
-        )
-        let viewModel = SearchView.ViewModel(useCase: useCaseRemote)
-        let view = SearchView(viewModel: viewModel)
-        
-        return view
     }
 }
 

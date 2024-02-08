@@ -26,14 +26,14 @@ public final class GetWordDefinitionsRemote: GetWordDefinitionsUseCase {
     public func searchWordDefinitions(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition] {
         if let wordDefinition = cache.get(dto.word) {
             return [wordDefinition]
+        } else {
+            return try await userCreditFlow(dto)
         }
-        
-        return try await userCreditFlow(dto)
     }
     
     private func userCreditFlow(_ dto: GetWordDefinitionsDTO) async throws -> [WordDefinition] {
         guard var userCredit = userCreditRepository.loadUserCredit() else {
-            let userCredit = UserCredit(isPaidUser: false, dayTime: Date(), credits: 4)
+            let userCredit = UserCredit(isPaidUser: false, dayTime: Date(), credits: 4000)
             userCreditRepository.saveUserCredit(userCredit)
             return try await performRequest(dto)
         }
