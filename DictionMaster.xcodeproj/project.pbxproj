@@ -20,6 +20,9 @@
 		85300B392B71A08B00471E09 /* PurchaseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85300B382B71A08B00471E09 /* PurchaseBody.swift */; };
 		853A25722B71502400B31AA9 /* WordDefinitionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A25712B71502400B31AA9 /* WordDefinitionsList.swift */; };
 		85440F752B75ADD500229D49 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440F742B75ADD500229D49 /* SearchViewModelTests.swift */; };
+		85440F792B75D60D00229D49 /* PurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440F782B75D60D00229D49 /* PurchaseViewModel.swift */; };
+		85440F7B2B75D68900229D49 /* ResetUserCreditUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440F7A2B75D68900229D49 /* ResetUserCreditUseCase.swift */; };
+		85440F7D2B75D6CA00229D49 /* ResetUserCreditLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440F7C2B75D6CA00229D49 /* ResetUserCreditLocal.swift */; };
 		855F86162B753EEB0038950F /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86152B753EEB0038950F /* AppFactory.swift */; };
 		855F86182B75415E0038950F /* ResultBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86172B75415E0038950F /* ResultBottomView.swift */; };
 		855F861A2B7563620038950F /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86192B7563620038950F /* View+.swift */; };
@@ -40,7 +43,6 @@
 		8573D3702B741315003A2C36 /* Infrastructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D685842B73CDB700BBD7F3 /* Infrastructure.framework */; };
 		8573D3712B741315003A2C36 /* Infrastructure.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85D685842B73CDB700BBD7F3 /* Infrastructure.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8573D37F2B74509A003A2C36 /* UseCreditRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D37C2B74509A003A2C36 /* UseCreditRepository.swift */; };
-		8573D38B2B7453B4003A2C36 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8573D38A2B7453B4003A2C36 /* KeychainSwift */; };
 		8573D38E2B745413003A2C36 /* UserCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D38C2B745413003A2C36 /* UserCredit.swift */; };
 		8573D3912B7455EE003A2C36 /* KeychainUserCreditRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D3852B74537E003A2C36 /* KeychainUserCreditRepository.swift */; };
 		85D685332B73B56100BBD7F3 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 85D685322B73B56100BBD7F3 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -190,6 +192,9 @@
 		85300B382B71A08B00471E09 /* PurchaseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseBody.swift; sourceTree = "<group>"; };
 		853A25712B71502400B31AA9 /* WordDefinitionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionsList.swift; sourceTree = "<group>"; };
 		85440F742B75ADD500229D49 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
+		85440F782B75D60D00229D49 /* PurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewModel.swift; sourceTree = "<group>"; };
+		85440F7A2B75D68900229D49 /* ResetUserCreditUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetUserCreditUseCase.swift; sourceTree = "<group>"; };
+		85440F7C2B75D6CA00229D49 /* ResetUserCreditLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetUserCreditLocal.swift; sourceTree = "<group>"; };
 		855F86152B753EEB0038950F /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		855F86172B75415E0038950F /* ResultBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBottomView.swift; sourceTree = "<group>"; };
 		855F86192B7563620038950F /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
@@ -266,7 +271,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8573D38B2B7453B4003A2C36 /* KeychainSwift in Frameworks */,
 				8573D30B2B74079D003A2C36 /* Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +346,7 @@
 			children = (
 				85300B352B718FCB00471E09 /* Components */,
 				85300B332B7163DC00471E09 /* PurchaseView.swift */,
+				85440F782B75D60D00229D49 /* PurchaseViewModel.swift */,
 			);
 			path = Purchase;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				85D685472B73B83E00BBD7F3 /* GetWordDefinitionUseCase.swift */,
+				85440F7A2B75D68900229D49 /* ResetUserCreditUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -570,6 +576,7 @@
 			isa = PBXGroup;
 			children = (
 				85D685692B73B93700BBD7F3 /* GetWordDefinitionsRemote.swift */,
+				85440F7C2B75D6CA00229D49 /* ResetUserCreditLocal.swift */,
 			);
 			path = ConcreteUseCases;
 			sourceTree = "<group>";
@@ -809,7 +816,6 @@
 			);
 			name = Infrastructure;
 			packageProductDependencies = (
-				8573D38A2B7453B4003A2C36 /* KeychainSwift */,
 			);
 			productName = Infrastructure;
 			productReference = 85D685842B73CDB700BBD7F3 /* Infrastructure.framework */;
@@ -942,7 +948,6 @@
 			);
 			mainGroup = 85EC02782B6DCF3A003B0206;
 			packageReferences = (
-				8573D37B2B745033003A2C36 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 85EC02822B6DCF3A003B0206 /* Products */;
 			projectDirPath = "";
@@ -1055,6 +1060,7 @@
 				855F86232B7574280038950F /* ResultWordDefinition.swift in Sources */,
 				8573D38E2B745413003A2C36 /* UserCredit.swift in Sources */,
 				85D685482B73B83E00BBD7F3 /* GetWordDefinitionUseCase.swift in Sources */,
+				85440F7B2B75D68900229D49 /* ResetUserCreditUseCase.swift in Sources */,
 				85D685442B73B76D00BBD7F3 /* GetWordDefinitionsDTO.swift in Sources */,
 				85D6853F2B73B6E200BBD7F3 /* Meaning.swift in Sources */,
 			);
@@ -1065,6 +1071,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8573D37F2B74509A003A2C36 /* UseCreditRepository.swift in Sources */,
+				85440F7D2B75D6CA00229D49 /* ResetUserCreditLocal.swift in Sources */,
 				85D685742B73BB0A00BBD7F3 /* HttpClient.swift in Sources */,
 				8573D3022B740127003A2C36 /* CacheRepository.swift in Sources */,
 				85D6856A2B73B93700BBD7F3 /* GetWordDefinitionsRemote.swift in Sources */,
@@ -1116,6 +1123,7 @@
 				85300B372B718FE100471E09 /* PurchaseHeader.swift in Sources */,
 				8503DBA22B7124EA005C91B9 /* ResultHeaderView.swift in Sources */,
 				8503DB832B70932D005C91B9 /* SearchViewModel.swift in Sources */,
+				85440F792B75D60D00229D49 /* PurchaseViewModel.swift in Sources */,
 				8503DB8E2B70ADBD005C91B9 /* UIScreen+.swift in Sources */,
 				8503DB862B709573005C91B9 /* FlagView.swift in Sources */,
 				8503DB7F2B709304005C91B9 /* SearchView.swift in Sources */,
@@ -1858,25 +1866,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		8573D37B2B745033003A2C36 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 21.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		8573D38A2B7453B4003A2C36 /* KeychainSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8573D37B2B745033003A2C36 /* XCRemoteSwiftPackageReference "keychain-swift" */;
-			productName = KeychainSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 85EC02792B6DCF3A003B0206 /* Project object */;
 }

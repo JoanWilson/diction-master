@@ -29,4 +29,14 @@ enum AppFactory {
         
         return view
     }
+    
+    static func makePurchaseView() -> PurchaseView {
+        return PurchaseView(
+            viewModel: .init(
+                useCase: ResetUserCreditLocal(
+                    userCreditRepository: KeychainUserCreditRepository()
+                )
+            )
+        )
+    }
 }
