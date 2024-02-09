@@ -22,22 +22,17 @@ public struct UserCredit: Codable {
         guard let dayTime = dayTime else {
             return false
         }
-        
         let calendar = Calendar.current
         let now = Date()
-        let nextDayStart = calendar.date(
-            bySettingHour: 0,
-            minute: 0,
-            second: 0,
-            of: dayTime.addingTimeInterval(24*60*60)
-        )!
         
-        if now >= nextDayStart {
-            self.dayTime = now
+        let comparisonResult = calendar.compare(now, to: dayTime, toGranularity: .day)
+        
+        switch comparisonResult {
+        case .orderedDescending:
             self.credits = 5
             return true
+        default:
+            return false
         }
-        
-        return false
     }
 }
