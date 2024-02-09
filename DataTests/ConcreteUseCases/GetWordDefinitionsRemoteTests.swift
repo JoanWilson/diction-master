@@ -154,8 +154,8 @@ final class GetWordDefinitionsRemoteTests: XCTestCase {
         
         let calendar = Calendar.current
         let now = Date()
-        let oneDayAgo = calendar.date(byAdding: .day, value:  -1, to: now)!
-        let userCreditModel = UserCredit(isPaidUser: false, dayTime: oneDayAgo, credits:  0)
+        let oneDayAgo = calendar.date(byAdding: .day, value: -1, to: now)!
+        let userCreditModel = UserCredit(isPaidUser: false, dayTime: oneDayAgo, credits: 0)
         userCredit.saveUserCredit(userCreditModel)
         
         let sut = GetWordDefinitionsRemote(
@@ -176,8 +176,5 @@ final class GetWordDefinitionsRemoteTests: XCTestCase {
             XCTFail("Should not throw error because the user has credits loaded by the new day")
         }
     }
-    
-    
-    
-}
 
+}

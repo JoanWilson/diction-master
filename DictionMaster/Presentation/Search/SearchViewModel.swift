@@ -9,9 +9,9 @@ import Foundation
 import Domain
 
 extension SearchView {
-    @MainActor
+    
     internal final class ViewModel: ObservableObject {
-        @Published var wordDefinitionFound: [WordDefinition] = []
+        @MainActor @Published var wordDefinitionFound: [WordDefinition] = []
         @Published var mustBuySubscription: Bool = false
         @Published var showAlert: Bool = false
         @Published var errorFound: GetWordDefinitionsError = .unexpected
@@ -20,7 +20,7 @@ extension SearchView {
         private var tasks: [Task<Void, Never>] = []
         
         private let useCase: GetWordDefinitionsUseCase
-
+        
         init(useCase: GetWordDefinitionsUseCase) {
             self.useCase = useCase
         }
@@ -31,44 +31,52 @@ extension SearchView {
         }
         
         func searchWord(word: String) {
-            let task = Task {
+            let task = Task { @MainActor in
                 do {
                     let dto = GetWordDefinitionsDTO(word: word, language: "en")
                     wordDefinitionFound = try await useCase.searchWordDefinitions(dto)
-                    showResultView.toggle()
+                    await MainActor.run {
+                        showResultView.toggle()
+                    }
+                    
                 } catch GetWordDefinitionsError.mustBuySubscription {
-                    mustBuySubscription.toggle()
+                    await MainActor.run {
+                        mustBuySubscription.toggle()
+                    }
                 } catch {
-                    showAlert.toggle()
+                    await MainActor.run {
+                        showAlert.toggle()
+                    }
+                    
                 }
             }
             tasks.append(task)
         }
         
-        private func convertToResultWordDefinition(_ wordDefinition: WordDefinition) -> ResultWordDefinition {
-            let title = wordDefinition.word ?? ""
-            let phoneticText = wordDefinition.phonetics?.first?.text ?? ""
-            let audioURLStr = wordDefinition.phonetics?.first?.audio ?? ""
-            let definitions = wordDefinition.meanings?.flatMap { meaning -> [ResultDefinition] in
-                meaning.definitions?.map { definition -> ResultDefinition in
-                    ResultDefinition(
-                        partOfSpeech: meaning.partOfSpeech ?? "",
-                        definition: definition.definition ?? "",
-                        example: definition.example ?? ""
-                    )
-                } ?? []
-            } ?? []
-            
-            return ResultWordDefinition(
-                title: title,
-                phonetic: phoneticText,
-                audioURLStr: audioURLStr,
-                definitions: definitions
-            )
-        }
-        
-        public func getResultWordDefinition() -> ResultWordDefinition {
-            return convertToResultWordDefinition(wordDefinitionFound[0])
-        }
+//        private func convertToResultWordDefinition(_ wordDefinition: WordDefinition) -> ResultWordDefinition {
+//            let title = wordDefinition.word ?? ""
+//            let phoneticText = wordDefinition.phonetics?.first?.text ?? wordDefinition.phonetic ?? ""
+//            let audioURLStr = wordDefinition.phonetics?.first?.audio ?? ""
+//            let definitions = wordDefinition.meanings?.flatMap { meaning -> [ResultDefinition] in
+//                meaning.definitions?.map { definition -> ResultDefinition in
+//                    ResultDefinition(
+//                        partOfSpeech: meaning.partOfSpeech ?? "",
+//                        definition: definition.definition ?? "",
+//                        example: definition.example ?? ""
+//                    )
+//                } ?? []
+//            } ?? []
+//            
+//            return ResultWordDefinition(
+//                title: title,
+//                phonetic: phoneticText,
+//                audioURLStr: audioURLStr,
+//                definitions: definitions
+//            )
+//        }
+//        
+//        @MainActor public func getResultWordDefinition() -> ResultWordDefinition {
+//            return convertToResultWordDefinition(wordDefinitionFound[0])
+//        }
     }
 }

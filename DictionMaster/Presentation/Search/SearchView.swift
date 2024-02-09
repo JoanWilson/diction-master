@@ -42,7 +42,7 @@ struct SearchView: View {
             .fullScreenCover(isPresented: $viewModel.showResultView, content: {
                 ResultView(
                     viewModel: ResultView.ViewModel(
-                        model: viewModel.getResultWordDefinition()
+                        model: viewModel.wordDefinitionFound
                     )
                 )
             })

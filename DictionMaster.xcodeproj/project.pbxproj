@@ -19,6 +19,7 @@
 		85300B372B718FE100471E09 /* PurchaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85300B362B718FE100471E09 /* PurchaseHeader.swift */; };
 		85300B392B71A08B00471E09 /* PurchaseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85300B382B71A08B00471E09 /* PurchaseBody.swift */; };
 		853A25722B71502400B31AA9 /* WordDefinitionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A25712B71502400B31AA9 /* WordDefinitionsList.swift */; };
+		85440F752B75ADD500229D49 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440F742B75ADD500229D49 /* SearchViewModelTests.swift */; };
 		855F86162B753EEB0038950F /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86152B753EEB0038950F /* AppFactory.swift */; };
 		855F86182B75415E0038950F /* ResultBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86172B75415E0038950F /* ResultBottomView.swift */; };
 		855F861A2B7563620038950F /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86192B7563620038950F /* View+.swift */; };
@@ -188,6 +189,7 @@
 		85300B362B718FE100471E09 /* PurchaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHeader.swift; sourceTree = "<group>"; };
 		85300B382B71A08B00471E09 /* PurchaseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseBody.swift; sourceTree = "<group>"; };
 		853A25712B71502400B31AA9 /* WordDefinitionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionsList.swift; sourceTree = "<group>"; };
+		85440F742B75ADD500229D49 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		855F86152B753EEB0038950F /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		855F86172B75415E0038950F /* ResultBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBottomView.swift; sourceTree = "<group>"; };
 		855F86192B7563620038950F /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
@@ -404,6 +406,28 @@
 				85300B382B71A08B00471E09 /* PurchaseBody.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		85440F712B75AC9F00229D49 /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Purchase;
+			sourceTree = "<group>";
+		};
+		85440F722B75ACA600229D49 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		85440F732B75ACAC00229D49 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				85440F742B75ADD500229D49 /* SearchViewModelTests.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		855F86132B7526140038950F /* Main */ = {
@@ -666,6 +690,9 @@
 		85EC02942B6DCF3C003B0206 /* DictionMasterTests */ = {
 			isa = PBXGroup;
 			children = (
+				85440F732B75ACAC00229D49 /* Search */,
+				85440F722B75ACA600229D49 /* Result */,
+				85440F712B75AC9F00229D49 /* Purchase */,
 				85EC02952B6DCF3C003B0206 /* DictionMasterTests.swift */,
 			);
 			path = DictionMasterTests;
@@ -1104,6 +1131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85440F752B75ADD500229D49 /* SearchViewModelTests.swift in Sources */,
 				85EC02962B6DCF3C003B0206 /* DictionMasterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
