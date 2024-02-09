@@ -12,12 +12,17 @@
 		<key>DictionMaster.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Domain.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>3</integer>
+		</dict>
+		<key>Infrastructure.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>SWXMLHashPlayground (Playground) 1.xcscheme</key>
 		<dict>
@@ -49,6 +54,21 @@
 			<true/>
 		</dict>
 		<key>8593CF502B6DE7AE00613B07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85EC02802B6DCF3A003B0206</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85EC02902B6DCF3C003B0206</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85EC029A2B6DCF3C003B0206</key>
 		<dict>
 			<key>primary</key>
 			<true/>
