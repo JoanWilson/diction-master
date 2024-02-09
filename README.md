@@ -45,8 +45,17 @@
 ## About Purchase Screen
 > When the user taps to subscribe. The app will reset the User Credits in order to achieve the flow again.
 
+## Preview
+
+https://github.com/JoanWilson/diction-master/assets/48629647/1144d187-ece8-459f-a88f-e5d78492e536
+
 
 ## 🤝 Developed by
+
+
+
+
+
 
 
 <table>
