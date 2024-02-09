@@ -10,8 +10,11 @@ import SwiftUI
 struct PurchaseView: View {
     @Environment(\.dismiss) var dismiss
     
-    init() {
+    @StateObject var viewModel: PurchaseView.ViewModel
+    
+    init(viewModel: PurchaseView.ViewModel) {
         UIScrollView.appearance().bounces = false
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
@@ -25,6 +28,7 @@ struct PurchaseView: View {
                         "SUBSCRIBE",
                         action: {
                             dismiss()
+                            viewModel.resetUserCredit()
                             UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                         }
                     )
@@ -41,8 +45,4 @@ struct PurchaseView: View {
             }
         }
     }
-}
-
-#Preview(traits: .sizeThatFitsLayout) {
-    PurchaseView()
 }
