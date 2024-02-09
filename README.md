@@ -1,4 +1,4 @@
-# Desafio Fractal
+# Diction Master
 <hr>
 
 > An iOS app created using clean architecture. It is my solved challenged for iOS Position at Falou. This is an app that receive any word in english and display the word definition through api request.
