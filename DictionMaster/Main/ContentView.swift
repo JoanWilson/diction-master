@@ -6,10 +6,6 @@
 //
 
 import SwiftUI
-import Domain
-import Data
-import Infrastructure
-import Security
 
 struct ContentView: View {
     var body: some View {

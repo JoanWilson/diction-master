@@ -37,7 +37,7 @@ struct SearchView: View {
                 }
             })
             .fullScreenCover(isPresented: $viewModel.mustBuySubscription, content: {
-                PurchaseView()
+                AppFactory.makePurchaseView()
             })
             .fullScreenCover(isPresented: $viewModel.showResultView, content: {
                 ResultView(

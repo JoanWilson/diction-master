@@ -10,7 +10,7 @@ import Data
 import Security
 
 public final class KeychainUserCreditRepository: UseCreditRepository {
-    private let serviceName = "com.yourapp.usercredit"
+    private let serviceName = "com.DictionMaster.usercredit"
     private let accountName = "UserCredit"
 
     public init() {}
