@@ -19,6 +19,7 @@
 		85300B372B718FE100471E09 /* PurchaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85300B362B718FE100471E09 /* PurchaseHeader.swift */; };
 		85300B392B71A08B00471E09 /* PurchaseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85300B382B71A08B00471E09 /* PurchaseBody.swift */; };
 		853A25722B71502400B31AA9 /* WordDefinitionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A25712B71502400B31AA9 /* WordDefinitionsList.swift */; };
+		85440F752B75ADD500229D49 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440F742B75ADD500229D49 /* SearchViewModelTests.swift */; };
 		855F86162B753EEB0038950F /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86152B753EEB0038950F /* AppFactory.swift */; };
 		855F86182B75415E0038950F /* ResultBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86172B75415E0038950F /* ResultBottomView.swift */; };
 		855F861A2B7563620038950F /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F86192B7563620038950F /* View+.swift */; };
@@ -59,7 +60,7 @@
 		85D685762B73BC3600BBD7F3 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D685752B73BC3600BBD7F3 /* HttpError.swift */; };
 		85D685792B73BC8600BBD7F3 /* GetWordDefinitionsRemoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D685782B73BC8600BBD7F3 /* GetWordDefinitionsRemoteTests.swift */; };
 		85D6857C2B73BF1400BBD7F3 /* HttpClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6857B2B73BF1400BBD7F3 /* HttpClientMock.swift */; };
-		85D6857E2B73BF3E00BBD7F3 /* WordDefinitionsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6857D2B73BF3E00BBD7F3 /* WordDefinitionsMock.swift */; };
+		85D6857E2B73BF3E00BBD7F3 /* ModelMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6857D2B73BF3E00BBD7F3 /* ModelMocks.swift */; };
 		85D6858C2B73CDB700BBD7F3 /* Infrastructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D685842B73CDB700BBD7F3 /* Infrastructure.framework */; };
 		85D685912B73CDB700BBD7F3 /* InfrastructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D685902B73CDB700BBD7F3 /* InfrastructureTests.swift */; };
 		85EC02852B6DCF3A003B0206 /* DictionMasterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC02842B6DCF3A003B0206 /* DictionMasterApp.swift */; };
@@ -188,6 +189,7 @@
 		85300B362B718FE100471E09 /* PurchaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHeader.swift; sourceTree = "<group>"; };
 		85300B382B71A08B00471E09 /* PurchaseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseBody.swift; sourceTree = "<group>"; };
 		853A25712B71502400B31AA9 /* WordDefinitionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionsList.swift; sourceTree = "<group>"; };
+		85440F742B75ADD500229D49 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		855F86152B753EEB0038950F /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		855F86172B75415E0038950F /* ResultBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBottomView.swift; sourceTree = "<group>"; };
 		855F86192B7563620038950F /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
@@ -220,7 +222,7 @@
 		85D685752B73BC3600BBD7F3 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		85D685782B73BC8600BBD7F3 /* GetWordDefinitionsRemoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWordDefinitionsRemoteTests.swift; sourceTree = "<group>"; };
 		85D6857B2B73BF1400BBD7F3 /* HttpClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientMock.swift; sourceTree = "<group>"; };
-		85D6857D2B73BF3E00BBD7F3 /* WordDefinitionsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionsMock.swift; sourceTree = "<group>"; };
+		85D6857D2B73BF3E00BBD7F3 /* ModelMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMocks.swift; sourceTree = "<group>"; };
 		85D685842B73CDB700BBD7F3 /* Infrastructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infrastructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D6858B2B73CDB700BBD7F3 /* InfrastructureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfrastructureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D685902B73CDB700BBD7F3 /* InfrastructureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfrastructureTests.swift; sourceTree = "<group>"; };
@@ -406,6 +408,28 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		85440F712B75AC9F00229D49 /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Purchase;
+			sourceTree = "<group>";
+		};
+		85440F722B75ACA600229D49 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		85440F732B75ACAC00229D49 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				85440F742B75ADD500229D49 /* SearchViewModelTests.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		855F86132B7526140038950F /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,7 +603,7 @@
 			isa = PBXGroup;
 			children = (
 				85D6857B2B73BF1400BBD7F3 /* HttpClientMock.swift */,
-				85D6857D2B73BF3E00BBD7F3 /* WordDefinitionsMock.swift */,
+				85D6857D2B73BF3E00BBD7F3 /* ModelMocks.swift */,
 				855F86262B75854A0038950F /* CacheRepositoryMock.swift */,
 				855F86282B7585B90038950F /* UserCreditRepositoryMock.swift */,
 			);
@@ -666,6 +690,9 @@
 		85EC02942B6DCF3C003B0206 /* DictionMasterTests */ = {
 			isa = PBXGroup;
 			children = (
+				85440F732B75ACAC00229D49 /* Search */,
+				85440F722B75ACA600229D49 /* Result */,
+				85440F712B75AC9F00229D49 /* Purchase */,
 				85EC02952B6DCF3C003B0206 /* DictionMasterTests.swift */,
 			);
 			path = DictionMasterTests;
@@ -1050,7 +1077,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85D6857C2B73BF1400BBD7F3 /* HttpClientMock.swift in Sources */,
-				85D6857E2B73BF3E00BBD7F3 /* WordDefinitionsMock.swift in Sources */,
+				85D6857E2B73BF3E00BBD7F3 /* ModelMocks.swift in Sources */,
 				855F86292B7585B90038950F /* UserCreditRepositoryMock.swift in Sources */,
 				855F86272B75854A0038950F /* CacheRepositoryMock.swift in Sources */,
 				85D685792B73BC8600BBD7F3 /* GetWordDefinitionsRemoteTests.swift in Sources */,
@@ -1104,6 +1131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85440F752B75ADD500229D49 /* SearchViewModelTests.swift in Sources */,
 				85EC02962B6DCF3C003B0206 /* DictionMasterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

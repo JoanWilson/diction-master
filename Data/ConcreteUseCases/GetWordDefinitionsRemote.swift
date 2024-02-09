@@ -49,6 +49,7 @@ public final class GetWordDefinitionsRemote: GetWordDefinitionsUseCase {
         }
         
         if userCredit.checkAndResetDay() {
+            userCredit.credits -= 1
             userCreditRepository.updateUserCredit(userCredit)
             return try await performRequest(dto)
         }

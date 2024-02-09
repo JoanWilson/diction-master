@@ -10,6 +10,10 @@ import SwiftUI
 struct PurchaseView: View {
     @Environment(\.dismiss) var dismiss
     
+    init() {
+        UIScrollView.appearance().bounces = false
+    }
+    
     var body: some View {
         ScrollViewReader { scrollProxy in
             ScrollView {

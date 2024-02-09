@@ -9,15 +9,17 @@ import Domain
 import Data
 
 class UserCreditRepositoryMock: UseCreditRepository {
-    func saveUserCredit(_ userCredit: Domain.UserCredit) {
-        <#code#>
+    var userCredit: UserCredit!
+    
+    func saveUserCredit(_ userCredit: UserCredit) {
+        self.userCredit = userCredit
     }
     
-    func loadUserCredit() -> Domain.UserCredit? {
-        <#code#>
+    func loadUserCredit() -> UserCredit? {
+        return userCredit
     }
     
-    func updateUserCredit(_ userCredit: Domain.UserCredit) {
-        <#code#>
+    func updateUserCredit(_ userCredit: UserCredit) {
+        self.userCredit = userCredit
     }
 }
