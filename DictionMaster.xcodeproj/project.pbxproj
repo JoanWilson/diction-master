@@ -45,6 +45,7 @@
 		8573D37F2B74509A003A2C36 /* UseCreditRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D37C2B74509A003A2C36 /* UseCreditRepository.swift */; };
 		8573D38E2B745413003A2C36 /* UserCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D38C2B745413003A2C36 /* UserCredit.swift */; };
 		8573D3912B7455EE003A2C36 /* KeychainUserCreditRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573D3852B74537E003A2C36 /* KeychainUserCreditRepository.swift */; };
+		8574514E2B7F184E00517B66 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8574514D2B7F184E00517B66 /* SearchButton.swift */; };
 		85D685332B73B56100BBD7F3 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 85D685322B73B56100BBD7F3 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85D6853B2B73B59900BBD7F3 /* WordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6853A2B73B59900BBD7F3 /* WordDefinition.swift */; };
 		85D6853D2B73B6C700BBD7F3 /* Phonetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6853C2B73B6C700BBD7F3 /* Phonetic.swift */; };
@@ -210,6 +211,7 @@
 		8573D37C2B74509A003A2C36 /* UseCreditRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCreditRepository.swift; sourceTree = "<group>"; };
 		8573D3852B74537E003A2C36 /* KeychainUserCreditRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUserCreditRepository.swift; sourceTree = "<group>"; };
 		8573D38C2B745413003A2C36 /* UserCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredit.swift; sourceTree = "<group>"; };
+		8574514D2B7F184E00517B66 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		85D685302B73B56100BBD7F3 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D685322B73B56100BBD7F3 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		85D6853A2B73B59900BBD7F3 /* WordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WordDefinition.swift; path = Domain/Models/WordDefinition/WordDefinition.swift; sourceTree = SOURCE_ROOT; };
@@ -356,6 +358,7 @@
 			children = (
 				8503DB852B709573005C91B9 /* FlagView.swift */,
 				8503DB892B709F76005C91B9 /* InputWord.swift */,
+				8574514D2B7F184E00517B66 /* SearchButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1128,6 +1131,7 @@
 				8503DB862B709573005C91B9 /* FlagView.swift in Sources */,
 				8503DB7F2B709304005C91B9 /* SearchView.swift in Sources */,
 				855F86182B75415E0038950F /* ResultBottomView.swift in Sources */,
+				8574514E2B7F184E00517B66 /* SearchButton.swift in Sources */,
 				853A25722B71502400B31AA9 /* WordDefinitionsList.swift in Sources */,
 				85300B342B7163DC00471E09 /* PurchaseView.swift in Sources */,
 				8503DB9F2B7120CA005C91B9 /* ResultView.swift in Sources */,
