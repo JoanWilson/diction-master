@@ -19,11 +19,10 @@ struct InputWord: View {
                 .foregroundColor(Color("color/deep_blue"))
                 .multilineTextAlignment(.center)
                 .focused($textfieldFocused)
-                            .onLongPressGesture(minimumDuration: 0.0) {
-                                textfieldFocused = true
-                            }
-                            .autocorrectionDisabled()
-            
+                .onLongPressGesture(minimumDuration: 0.0) {
+                    textfieldFocused = true
+                }
+                .autocorrectionDisabled()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

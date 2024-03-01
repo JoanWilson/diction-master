@@ -15,20 +15,19 @@ struct SearchView: View {
         NavigationStack {
             VStack {
                 FlagView(language: .english)
+                
                 Spacer()
+                
                 InputWord(text: $viewModel.text, placeholder: "Type your word..")
+                
                 Spacer()
-                if !viewModel.text.isEmpty {
-                    Button(
-                        "SEARCH",
-                        action: {
-                            Task {
-                                viewModel.searchWord(word: viewModel.text)
-                            }
-                            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-                        }
-                    )
-                    .buttonStyle(.primary)
+                
+                SearchButton(isLoading: $viewModel.isLoading, text: $viewModel.text) {
+                    viewModel.isLoading.toggle()
+                    Task {
+                        viewModel.searchWord(word: viewModel.text)
+                    }
+                    UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                 }
             }
             .alert("Couldn't find that word.", isPresented: $viewModel.showAlert, actions: {

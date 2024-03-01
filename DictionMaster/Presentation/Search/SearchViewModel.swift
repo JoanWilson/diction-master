@@ -17,6 +17,7 @@ extension SearchView {
         @Published var errorFound: GetWordDefinitionsError = .unexpected
         @Published var showResultView: Bool = false
         @Published var text = ""
+        @Published var isLoading: Bool = false
         private var tasks: [Task<Void, Never>] = []
         
         private let useCase: GetWordDefinitionsUseCase
@@ -37,46 +38,22 @@ extension SearchView {
                     wordDefinitionFound = try await useCase.searchWordDefinitions(dto)
                     await MainActor.run {
                         showResultView.toggle()
+                        isLoading.toggle()
                     }
                     
                 } catch GetWordDefinitionsError.mustBuySubscription {
                     await MainActor.run {
                         mustBuySubscription.toggle()
+                        isLoading.toggle()
                     }
                 } catch {
                     await MainActor.run {
                         showAlert.toggle()
+                        isLoading.toggle()
                     }
-                    
                 }
             }
             tasks.append(task)
         }
-        
-//        private func convertToResultWordDefinition(_ wordDefinition: WordDefinition) -> ResultWordDefinition {
-//            let title = wordDefinition.word ?? ""
-//            let phoneticText = wordDefinition.phonetics?.first?.text ?? wordDefinition.phonetic ?? ""
-//            let audioURLStr = wordDefinition.phonetics?.first?.audio ?? ""
-//            let definitions = wordDefinition.meanings?.flatMap { meaning -> [ResultDefinition] in
-//                meaning.definitions?.map { definition -> ResultDefinition in
-//                    ResultDefinition(
-//                        partOfSpeech: meaning.partOfSpeech ?? "",
-//                        definition: definition.definition ?? "",
-//                        example: definition.example ?? ""
-//                    )
-//                } ?? []
-//            } ?? []
-//            
-//            return ResultWordDefinition(
-//                title: title,
-//                phonetic: phoneticText,
-//                audioURLStr: audioURLStr,
-//                definitions: definitions
-//            )
-//        }
-//        
-//        @MainActor public func getResultWordDefinition() -> ResultWordDefinition {
-//            return convertToResultWordDefinition(wordDefinitionFound[0])
-//        }
     }
 }
