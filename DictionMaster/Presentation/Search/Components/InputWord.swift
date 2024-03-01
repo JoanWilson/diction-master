@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InputWord: View {
     @Binding var text: String
-    @FocusState private var textfieldFocused: Bool
+    @FocusState var isTextfieldFocused: Bool
     let placeholder: String
     
     var body: some View {
@@ -18,9 +18,9 @@ struct InputWord: View {
                 .font(.system(.title, design: .rounded, weight: .bold))
                 .foregroundColor(Color("color/deep_blue"))
                 .multilineTextAlignment(.center)
-                .focused($textfieldFocused)
+                .focused($isTextfieldFocused)
                 .onLongPressGesture(minimumDuration: 0.0) {
-                    textfieldFocused = true
+                    isTextfieldFocused = true
                 }
                 .autocorrectionDisabled()
         }

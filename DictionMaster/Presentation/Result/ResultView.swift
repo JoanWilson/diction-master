@@ -22,6 +22,7 @@ struct ResultView: View {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
                     ResultHeaderView(
+                        audioLoading: $viewModel.audioLoading,
                         title: viewModel.getModel().title,
                         subtitle: viewModel.getModel().phonetic
                     ) {

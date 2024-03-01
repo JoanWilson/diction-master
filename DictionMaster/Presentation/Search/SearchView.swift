@@ -10,7 +10,8 @@ import Domain
 
 struct SearchView: View {
     @StateObject var viewModel: ViewModel
-    
+    @FocusState var isTextFieldFocused: Bool
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -18,8 +19,12 @@ struct SearchView: View {
                 
                 Spacer()
                 
-                InputWord(text: $viewModel.text, placeholder: "Type your word..")
-                
+                InputWord(
+                    text: $viewModel.text,
+                    isTextfieldFocused: _isTextFieldFocused,
+                    placeholder: "Type your word.."
+                )
+
                 Spacer()
                 
                 SearchButton(isLoading: $viewModel.isLoading, text: $viewModel.text) {
@@ -45,7 +50,14 @@ struct SearchView: View {
                     )
                 )
             })
+            .onChange(of: viewModel.showResultView, { _, newValue in
+                if !newValue {
+                    viewModel.text = ""
+                    isTextFieldFocused = true
+                }
+            })
             .padding(.init(top: 75, leading: 18, bottom: 20, trailing: 17))
+
         }
         .onTapGesture {
             hideKeyboard()
