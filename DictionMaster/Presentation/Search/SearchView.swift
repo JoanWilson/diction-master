@@ -48,7 +48,7 @@ struct SearchView: View {
                     viewModel: ResultView.ViewModel(
                         model: viewModel.wordDefinitionFound
                     )
-                )
+                )   
             })
             .onChange(of: viewModel.showResultView, { _, newValue in
                 if !newValue {

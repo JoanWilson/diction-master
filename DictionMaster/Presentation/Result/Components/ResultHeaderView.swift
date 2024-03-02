@@ -20,20 +20,31 @@ struct ResultHeaderView: View {
             Text(title.capitalized)
                 .font(.system(size: 45, weight: .bold, design: .rounded))
                 .foregroundStyle(Color("color/deep_blue"))
-            
+
             HStack {
                 if audioLoading {
-                    ProgressView()
+                    Image(systemName: "waveform")
+                        .resizable()
+                        .frame(width: 18, height: 18)
+                        .symbolEffect(
+                            .variableColor
+                            .iterative
+                            .hideInactiveLayers
+                            .reversing,
+                            options: .repeating
+                        )
                         .tint(Color("color/white"))
                         .modifier(PlayButton())
                 } else {
                     Button {
                         playSound()
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     } label: {
                         Image("icon/speaker")
                             .resizable()
                             .modifier(PlayButton())
                     }
+                    .buttonStyle(ScaleEffectButtonStyle())
                 }
 
                 Text("\(subtitle)")
@@ -43,14 +54,4 @@ struct ResultHeaderView: View {
         }
     }
 }
-
-struct PlayButton: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .foregroundStyle(Color("color/white"))
-            .frame(width: 22.95, height: 20.4)
-            .padding(.init(top: 12.8, leading: 11.53, bottom: 12.8, trailing: 11.53))
-            .background(Color("color/primary"))
-            .clipShape(.circle)
-    }
-}
+                   

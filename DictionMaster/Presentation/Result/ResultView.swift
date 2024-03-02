@@ -34,7 +34,6 @@ struct ResultView: View {
                             viewModel.invalidPlayer.toggle()
                         }
                     }
-                    
                     WordDefinitionsList(definitions: viewModel.getModel().definitions)
                 }
                 .padding(.init(top: 48, leading: 20.5, bottom: 30, trailing: 18))
