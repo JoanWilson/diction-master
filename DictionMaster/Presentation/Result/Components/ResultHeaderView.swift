@@ -33,8 +33,7 @@ struct ResultHeaderView: View {
                             .reversing,
                             options: .repeating
                         )
-                        .tint(Color("color/white"))
-                        .modifier(PlayButton())
+                        .modifier(PlayingButton())
                 } else {
                     Button {
                         playSound()

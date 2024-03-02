@@ -16,9 +16,9 @@ struct SearchView: View {
         NavigationStack {
             VStack {
                 FlagView(language: .english)
-                
+
                 Spacer()
-                
+
                 InputWord(
                     text: $viewModel.text,
                     isTextfieldFocused: _isTextFieldFocused,
@@ -26,7 +26,7 @@ struct SearchView: View {
                 )
 
                 Spacer()
-                
+
                 SearchButton(isLoading: $viewModel.isLoading, text: $viewModel.text) {
                     viewModel.isLoading.toggle()
                     Task {
@@ -40,24 +40,30 @@ struct SearchView: View {
                     viewModel.showAlert.toggle()
                 }
             })
-            .fullScreenCover(isPresented: $viewModel.mustBuySubscription, content: {
-                AppFactory.makePurchaseView()
-            })
-            .fullScreenCover(isPresented: $viewModel.showResultView, content: {
+            .fullScreenCover(isPresented: $viewModel.isPurchaseViewPresented) {
+                AppFactory.makePurchaseView(
+                    isFullScreenCoverPresented: $viewModel.isPurchaseViewPresented,
+                    isFullScreenViewVisible: $viewModel.isPurchaseViewVisible
+                )
+            }
+            .fullScreenCover(isPresented: $viewModel.isFullScreenCoverPresented) {
                 ResultView(
                     viewModel: ResultView.ViewModel(
                         model: viewModel.wordDefinitionFound
-                    )
-                )   
+                    ), isFullScreenCoverPresented: $viewModel.isFullScreenCoverPresented, isFullScreenViewVisible: $viewModel.isFullScreenViewVisible
+                )
+            }
+            .transaction({ transaction in
+                transaction.disablesAnimations = true
+                transaction.animation = .linear(duration: 0.2)
             })
-            .onChange(of: viewModel.showResultView, { _, newValue in
+            .onChange(of: viewModel.isFullScreenCoverPresented || viewModel.isPurchaseViewPresented, { _, newValue in
                 if !newValue {
                     viewModel.text = ""
                     isTextFieldFocused = true
                 }
             })
             .padding(.init(top: 75, leading: 18, bottom: 20, trailing: 17))
-
         }
         .onTapGesture {
             hideKeyboard()

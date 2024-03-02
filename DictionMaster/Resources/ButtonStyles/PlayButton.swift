@@ -17,3 +17,12 @@ struct PlayButton: ViewModifier {
             .clipShape(.circle)
     }
 }
+
+struct PlayingButton: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundStyle(Color(.green))
+            .frame(width: 22.95, height: 20.4)
+            .padding(.init(top: 12.8, leading: 11.53, bottom: 12.8, trailing: 11.53))
+    }
+}

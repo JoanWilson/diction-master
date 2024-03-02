@@ -26,17 +26,15 @@ enum AppFactory {
         )
         let viewModel = SearchView.ViewModel(useCase: useCaseRemote)
         let view = SearchView(viewModel: viewModel)
-        
+
         return view
     }
-    
-    static func makePurchaseView() -> PurchaseView {
-        return PurchaseView(
-            viewModel: .init(
-                useCase: ResetUserCreditLocal(
-                    userCreditRepository: KeychainUserCreditRepository()
-                )
-            )
-        )
+
+    static func makePurchaseView(isFullScreenCoverPresented: Binding<Bool>,
+                                 isFullScreenViewVisible: Binding<Bool>) -> PurchaseView {
+        PurchaseView(
+            viewModel: .init(useCase: ResetUserCreditLocal(userCreditRepository: KeychainUserCreditRepository())),
+            isFullScreenCoverPresented: isFullScreenCoverPresented,
+            isFullScreenViewVisible: isFullScreenViewVisible)
     }
 }

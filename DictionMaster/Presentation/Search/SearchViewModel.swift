@@ -9,7 +9,6 @@ import Foundation
 import Domain
 
 extension SearchView {
-    
     internal final class ViewModel: ObservableObject {
         @MainActor @Published var wordDefinitionFound: [WordDefinition] = []
         @Published var mustBuySubscription: Bool = false
@@ -18,8 +17,11 @@ extension SearchView {
         @Published var showResultView: Bool = false
         @Published var text = ""
         @Published var isLoading: Bool = false
+        @Published var isFullScreenCoverPresented = false
+        @Published var isFullScreenViewVisible = false
+        @Published var isPurchaseViewPresented = false
+        @Published var isPurchaseViewVisible = false
         private var tasks: [Task<Void, Never>] = []
-        
         private let useCase: GetWordDefinitionsUseCase
         
         init(useCase: GetWordDefinitionsUseCase) {
@@ -37,13 +39,12 @@ extension SearchView {
                     let dto = GetWordDefinitionsDTO(word: word, language: "en")
                     wordDefinitionFound = try await useCase.searchWordDefinitions(dto)
                     await MainActor.run {
-                        showResultView.toggle()
+                        isFullScreenCoverPresented = true
                         isLoading.toggle()
                     }
-                    
                 } catch GetWordDefinitionsError.mustBuySubscription {
                     await MainActor.run {
-                        mustBuySubscription.toggle()
+                        isPurchaseViewPresented = true
                         isLoading.toggle()
                     }
                 } catch {
