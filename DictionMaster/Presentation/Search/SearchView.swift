@@ -49,13 +49,17 @@ struct SearchView: View {
             .fullScreenCover(isPresented: $viewModel.isFullScreenCoverPresented) {
                 ResultView(
                     viewModel: ResultView.ViewModel(
-                        model: viewModel.wordDefinitionFound
+                        model: self.viewModel.convertToResultWordDefinition(viewModel.wordDefinitionFound[0])
                     ), isFullScreenCoverPresented: $viewModel.isFullScreenCoverPresented, isFullScreenViewVisible: $viewModel.isFullScreenViewVisible
                 )
             }
             .transaction({ transaction in
-                transaction.disablesAnimations = true
-                transaction.animation = .linear(duration: 0.2)
+                if !viewModel.isFirstAppear {
+                    transaction.disablesAnimations = true
+                    transaction.animation = .linear(duration: 0.2)
+                } else {
+                    viewModel.isFirstAppear = false
+                }
             })
             .onChange(of: viewModel.isFullScreenCoverPresented || viewModel.isPurchaseViewPresented, { _, newValue in
                 if !newValue {

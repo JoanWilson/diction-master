@@ -22,8 +22,8 @@ struct ResultView: View {
                         VStack(alignment: .leading) {
                             ResultHeaderView(
                                 audioLoading: $viewModel.audioLoading,
-                                title: viewModel.getModel().title,
-                                subtitle: viewModel.getModel().phonetic
+                                title: viewModel.model.title,
+                                subtitle: viewModel.model.phonetic
                             ) {
                                 viewModel.playSound()
                             }
@@ -33,13 +33,13 @@ struct ResultView: View {
                                     viewModel.invalidPlayer.toggle()
                                 }
                             }
-                            WordDefinitionsList(definitions: viewModel.getModel().definitions)
+                            WordDefinitionsList(definitions: viewModel.model.definitions)
                         }
                         .padding(.init(top: 48, leading: 20.5, bottom: 30, trailing: 18))
 
                         Divider()
 
-                        ResultBottomView(word: viewModel.getModel().title)
+                        ResultBottomView(word: viewModel.model.title)
                             .padding(.horizontal, 20.5)
 
                         Spacer()

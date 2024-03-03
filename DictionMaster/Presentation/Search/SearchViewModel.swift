@@ -23,7 +23,8 @@ extension SearchView {
         @Published var isPurchaseViewVisible = false
         private var tasks: [Task<Void, Never>] = []
         private let useCase: GetWordDefinitionsUseCase
-        
+        var isFirstAppear: Bool = true
+
         init(useCase: GetWordDefinitionsUseCase) {
             self.useCase = useCase
         }
@@ -55,6 +56,39 @@ extension SearchView {
                 }
             }
             tasks.append(task)
+        }
+
+        func convertToResultWordDefinition(_ wordDefinition: WordDefinition) -> ResultWordDefinition {
+
+            guard let word = wordDefinition.word else {
+                return ResultWordDefinition(title: "", phonetic: "", audioURLStr: "", definitions: [])
+            }
+
+            let phoneticText = wordDefinition.phonetics?.first(where: { $0.text != nil })?
+                .text ?? wordDefinition.phonetic ?? ""
+            let audioURLStr = wordDefinition.phonetics?.first { phonetic in
+                if let audio = phonetic.audio {
+                    return audio.count > 5
+                }
+                return false
+            }?.audio ?? ""
+
+            let definitions = wordDefinition.meanings?.compactMap { meaning -> [ResultDefinition] in
+                meaning.definitions?.map { definition -> ResultDefinition in
+                    ResultDefinition(
+                        partOfSpeech: meaning.partOfSpeech ?? "",
+                        definition: definition.definition ?? "",
+                        example: definition.example ?? ""
+                    )
+                } ?? []
+            }.flatMap { $0 } ?? []
+
+            return ResultWordDefinition(
+                title: word,
+                phonetic: phoneticText,
+                audioURLStr: audioURLStr,
+                definitions: definitions
+            )
         }
     }
 }

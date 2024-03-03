@@ -14,9 +14,9 @@ extension ResultView {
         @Published private var player: AVPlayer? = AVPlayer()
         @Published var invalidPlayer: Bool = false
         @Published var audioLoading: Bool = false
-        let model: [WordDefinition]
+        let model: ResultWordDefinition
         
-        init(model: [WordDefinition]) {
+        init(model: ResultWordDefinition) {
             self.model = model
         }
         
@@ -26,7 +26,7 @@ extension ResultView {
             }
 
             DispatchQueue.main.async {
-                guard let url = URL(string: self.getModel().audioURLStr) else {
+                guard let url = URL(string: self.model.audioURLStr) else {
                     DispatchQueue.main.async {
                         self.invalidPlayer.toggle()
                         self.audioLoading = false
@@ -55,41 +55,6 @@ extension ResultView {
                 self.audioLoading = false
             }
             NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-        }
-
-        private func convertToResultWordDefinition(_ wordDefinition: WordDefinition) -> ResultWordDefinition {
-            guard let word = wordDefinition.word else {
-                return ResultWordDefinition(title: "", phonetic: "", audioURLStr: "", definitions: [])
-            }
-            
-            let phoneticText = wordDefinition.phonetics?.first(where: { $0.text != nil })?.text ?? wordDefinition.phonetic ?? ""
-            let audioURLStr = wordDefinition.phonetics?.first { phonetic in
-                if let audio = phonetic.audio {
-                    return audio.count > 5
-                }
-                return false
-            }?.audio ?? ""
-            
-            let definitions = wordDefinition.meanings?.compactMap { meaning -> [ResultDefinition] in
-                meaning.definitions?.map { definition -> ResultDefinition in
-                    ResultDefinition(
-                        partOfSpeech: meaning.partOfSpeech ?? "",
-                        definition: definition.definition ?? "",
-                        example: definition.example ?? ""
-                    )
-                } ?? []
-            }.flatMap { $0 } ?? []
-            
-            return ResultWordDefinition(
-                title: word,
-                phonetic: phoneticText,
-                audioURLStr: audioURLStr,
-                definitions: definitions
-            )
-        }
-
-        public func getModel() -> ResultWordDefinition {
-            return convertToResultWordDefinition(model[0])
         }
     }
 }

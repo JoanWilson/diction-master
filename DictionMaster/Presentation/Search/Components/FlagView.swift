@@ -28,8 +28,9 @@ struct FlagView: View {
                 .frame(width: 26, height: 27)
             
             Text(language().uppercased())
-                .font(.system(.title3, design: .rounded, weight: .regular))
+                .font(.system(size: 18, weight: .regular, design: .rounded))
                 .foregroundStyle(Color("color/deep_blue"))
+                .kerning(1.8)
         }
         .padding(.init(top: 6, leading: 8, bottom: 7, trailing: 12))
         .background(Color("color/light_blue_gray").opacity(0.1))
