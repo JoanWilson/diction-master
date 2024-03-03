@@ -25,7 +25,7 @@ struct SubscriptionFooter: View {
 
     private func makeCalloutText(_ str: String, weight: Font.Weight) -> AttributedString {
         var attrStr = AttributedString(str)
-        attrStr.font = .system(.callout, design: .rounded, weight: weight)
+        attrStr.font = .system(size: 16, weight: weight, design: .rounded)
         attrStr.foregroundColor = Color("color/deep_blue")
 
         return attrStr

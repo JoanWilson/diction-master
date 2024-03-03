@@ -9,7 +9,7 @@ import SwiftUI
 import Domain
 
 struct SearchView: View {
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     @FocusState var isTextFieldFocused: Bool
 
     var body: some View {
@@ -53,13 +53,10 @@ struct SearchView: View {
                 )
             }
             .transaction({ transaction in
-                print(transaction)
                 if viewModel.appearingCount > 1 {
-                    print("Apareceu")
                     transaction.disablesAnimations = true
                     transaction.animation = .linear(duration: 0.2)
                 } else {
-                    print("Increase")
                     viewModel.appearingCount += 1
                 }
             })

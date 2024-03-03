@@ -14,11 +14,11 @@ struct ResultBottomView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("That’s it for “\(word.lowercased())”!")
-                .font(.system(.title2, design: .rounded, weight: .bold))
+                .font(.system(size: 24, weight: .bold, design: .rounded))
                 .foregroundStyle(Color("color/deep_blue"))
                 .padding(.top, 35.5)
             Text("Try another search now!")
-                .font(.system(.callout, design: .rounded, weight: .regular))
+                .font(.system(size: 16, weight: .regular, design: .rounded))
                 .foregroundStyle(Color("color/deep_blue"))
                 .padding(.top, 8)
         }
