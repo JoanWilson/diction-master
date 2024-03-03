@@ -41,10 +41,10 @@ struct SearchView: View {
                 }
             })
             .fullScreenCover(isPresented: $viewModel.isPurchaseViewPresented) {
-//                AppFactory.makePurchaseView(
-//                    isFullScreenCoverPresented: $viewModel.isPurchaseViewPresented,
-//                    isFullScreenViewVisible: $viewModel.isPurchaseViewVisible
-//                )
+                AppFactory.makeSubscriptionView(
+                    isFullScreenCoverPresented: $viewModel.isPurchaseViewPresented,
+                    isFullScreenViewVisible: $viewModel.isPurchaseViewVisible
+                )
             }
             .fullScreenCover(isPresented: $viewModel.isFullScreenCoverPresented) {
                 ResultView(

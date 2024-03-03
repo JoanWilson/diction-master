@@ -13,6 +13,7 @@ struct SubscriptionBody: View {
             Text(subscribeText())
             .multilineTextAlignment(.center)
             .lineLimit(nil)
+            .minimumScaleFactor(1)
         }
     }
     
