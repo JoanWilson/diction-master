@@ -5,13 +5,13 @@
 //  Created by Joan Wilson Oliveira on 08/02/24.
 //
 
-import SwiftUI
-import Domain
-import Data
-import Infrastructure
-import Security
+ import SwiftUI
+ import Domain
+ import Data
+ import Infrastructure
+ import Security
 
-enum AppFactory {
+ enum AppFactory {
     @MainActor
     static func makeBuildApp() -> SearchView {
         let client = URLSessionHttpClient()
@@ -26,17 +26,15 @@ enum AppFactory {
         )
         let viewModel = SearchView.ViewModel(useCase: useCaseRemote)
         let view = SearchView(viewModel: viewModel)
-        
+
         return view
     }
-    
-    static func makePurchaseView() -> PurchaseView {
-        return PurchaseView(
-            viewModel: .init(
-                useCase: ResetUserCreditLocal(
-                    userCreditRepository: KeychainUserCreditRepository()
-                )
-            )
-        )
+
+    static func makeSubscriptionView(isFullScreenCoverPresented: Binding<Bool>,
+                                     isFullScreenViewVisible: Binding<Bool>) -> SubscriptionView {
+        SubscriptionView(
+            viewModel: .init(useCase: ResetUserCreditLocal(userCreditRepository: KeychainUserCreditRepository())),
+            isFullScreenCoverPresented: isFullScreenCoverPresented,
+            isFullScreenViewVisible: isFullScreenViewVisible)
     }
-}
+ }

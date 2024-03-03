@@ -13,7 +13,8 @@ struct PrimaryButtonStyle: ButtonStyle {
             .frame(maxWidth: .infinity, maxHeight: 64)
             .background(Color("color/primary"))
             .foregroundStyle(Color("color/white"))
-            .font(.system(.title3, design: .rounded, weight: .bold))
+            .font(.system(size: 18, weight: .bold, design: .rounded))
+            .kerning(1.8)
             .clipShape(.rect(cornerRadius: 14))
             .scaleEffect(configuration.isPressed ?  0.95 :  1.0)
             .animation(

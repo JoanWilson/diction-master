@@ -10,40 +10,39 @@ import SwiftUI
 import AVFoundation
 
 struct ResultHeaderView: View {
+    @Binding var audioLoading: Bool
     let title: String
     let subtitle: String
-    
     let playSound: () -> Void
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 13) {
             Text(title.capitalized)
                 .font(.system(size: 45, weight: .bold, design: .rounded))
                 .foregroundStyle(Color("color/deep_blue"))
-            
+
             HStack {
-                Button {
-                    playSound()
-                } label: {
-                    Image("icon/speaker")
-                        .resizable()
-                        .foregroundStyle(Color("color/white"))
-                        .frame(width: 22.95, height: 20.4)
-                        .padding(.init(top: 12.8, leading: 11.53, bottom: 12.8, trailing: 11.53))
-                        .background(Color("color/primary"))
-                        .clipShape(.circle)
+                if audioLoading {
+                    ProgressView()
+                        .tint(Color("color/white"))
+                        .modifier(PlayButton())
+                } else {
+                    Button {
+                        playSound()
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    } label: {
+                        Image("icon/speaker")
+                            .resizable()
+                            .modifier(PlayButton())
+                    }
+                    .buttonStyle(ScaleEffectButtonStyle())
                 }
-                
+
                 Text("\(subtitle)")
-                    .font(.system(.title2, design: .rounded, weight: .bold))
+                    .font(.system(size: 22, weight: .bold, design: .rounded))
                     .foregroundStyle(Color("color/deep_blue").opacity(0.4))
             }
         }
     }
 }
-
-#Preview(traits: .sizeThatFitsLayout) {
-    ResultHeaderView(title: "Hello", subtitle: "həˈləʊ") {
-        
-    }
-}
+                   

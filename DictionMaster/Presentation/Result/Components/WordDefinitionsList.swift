@@ -21,7 +21,8 @@ struct WordDefinitionsList: View {
                         makeDeepBlueText(weight: .bold, "\(definition.definition)")
                     )
                     .padding(.bottom, 5)
-                    
+                    .lineSpacing(0.19)
+
                     if !definition.example.isEmpty {
                         Text(
                             makeDeepBlueText(weight: .regular, "• \(definition.example)")
@@ -34,14 +35,14 @@ struct WordDefinitionsList: View {
     
     private func makeSemiLightBlueGrayLabel(_ str: String) -> AttributedString {
         var attrString = AttributedString("[\(str)] ")
-        attrString.font = .system(.callout, design: .rounded, weight: .bold)
+        attrString.font = .system(size: 16, weight: .bold, design: .rounded)
         attrString.foregroundColor = Color("color/semiLight_blue_gray")
         return attrString
     }
     
     private func makeDeepBlueText(weight: Font.Weight, _ str: String) -> AttributedString {
         var attrString = AttributedString(str)
-        attrString.font = .system(.callout, design: .rounded, weight: weight)
+        attrString.font = .system(size: 16, weight: weight, design: .rounded)
         attrString.foregroundColor = Color("color/deep_blue")
         return attrString
     }

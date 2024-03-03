@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-extension PurchaseView {
+extension SubscriptionView {
     internal final class ViewModel: ObservableObject {
         private let useCase: ResetUserCreditUseCase
         

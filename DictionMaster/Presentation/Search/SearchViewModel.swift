@@ -9,7 +9,6 @@ import Foundation
 import Domain
 
 extension SearchView {
-    
     internal final class ViewModel: ObservableObject {
         @MainActor @Published var wordDefinitionFound: [WordDefinition] = []
         @Published var mustBuySubscription: Bool = false
@@ -18,10 +17,14 @@ extension SearchView {
         @Published var showResultView: Bool = false
         @Published var text = ""
         @Published var isLoading: Bool = false
+        @Published var isFullScreenCoverPresented = false
+        @Published var isFullScreenViewVisible = false
+        @Published var isPurchaseViewPresented = false
+        @Published var isPurchaseViewVisible = false
         private var tasks: [Task<Void, Never>] = []
-        
         private let useCase: GetWordDefinitionsUseCase
-        
+        var appearingCount: Int = 0
+
         init(useCase: GetWordDefinitionsUseCase) {
             self.useCase = useCase
         }
@@ -37,13 +40,12 @@ extension SearchView {
                     let dto = GetWordDefinitionsDTO(word: word, language: "en")
                     wordDefinitionFound = try await useCase.searchWordDefinitions(dto)
                     await MainActor.run {
-                        showResultView.toggle()
+                        isFullScreenCoverPresented = true
                         isLoading.toggle()
                     }
-                    
                 } catch GetWordDefinitionsError.mustBuySubscription {
                     await MainActor.run {
-                        mustBuySubscription.toggle()
+                        isPurchaseViewPresented = true
                         isLoading.toggle()
                     }
                 } catch {
@@ -54,6 +56,39 @@ extension SearchView {
                 }
             }
             tasks.append(task)
+        }
+
+        func convertToResultWordDefinition(_ wordDefinition: WordDefinition) -> ResultWordDefinition {
+
+            guard let word = wordDefinition.word else {
+                return ResultWordDefinition(title: "", phonetic: "", audioURLStr: "", definitions: [])
+            }
+
+            let phoneticText = wordDefinition.phonetics?.first(where: { $0.text != nil })?
+                .text ?? wordDefinition.phonetic ?? ""
+            let audioURLStr = wordDefinition.phonetics?.first { phonetic in
+                if let audio = phonetic.audio {
+                    return audio.count > 5
+                }
+                return false
+            }?.audio ?? ""
+
+            let definitions = wordDefinition.meanings?.compactMap { meaning -> [ResultDefinition] in
+                meaning.definitions?.map { definition -> ResultDefinition in
+                    ResultDefinition(
+                        partOfSpeech: meaning.partOfSpeech ?? "",
+                        definition: definition.definition ?? "",
+                        example: definition.example ?? ""
+                    )
+                } ?? []
+            }.flatMap { $0 } ?? []
+
+            return ResultWordDefinition(
+                title: word,
+                phonetic: phoneticText,
+                audioURLStr: audioURLStr,
+                definitions: definitions
+            )
         }
     }
 }

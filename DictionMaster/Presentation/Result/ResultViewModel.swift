@@ -13,55 +13,48 @@ extension ResultView {
     internal final class ViewModel: ObservableObject {
         @Published private var player: AVPlayer? = AVPlayer()
         @Published var invalidPlayer: Bool = false
-        let model: [WordDefinition]
+        @Published var audioLoading: Bool = false
+        let model: ResultWordDefinition
         
-        init(model: [WordDefinition]) {
+        init(model: ResultWordDefinition) {
             self.model = model
         }
         
         func playSound() {
-            guard let url = URL(string: getModel().audioURLStr) else {
-                invalidPlayer.toggle()
-                return
+            DispatchQueue.main.async {
+                self.audioLoading = true
             }
-            let playerItem = AVPlayerItem(url: url)
-            player = AVPlayer(playerItem: playerItem)
-            player?.play()
-        }
-        
-        private func convertToResultWordDefinition(_ wordDefinition: WordDefinition) -> ResultWordDefinition {
-            guard let word = wordDefinition.word else {
-                return ResultWordDefinition(title: "", phonetic: "", audioURLStr: "", definitions: [])
-            }
-            
-            let phoneticText = wordDefinition.phonetics?.first(where: { $0.text != nil })?.text ?? wordDefinition.phonetic ?? ""
-            let audioURLStr = wordDefinition.phonetics?.first { phonetic in
-                if let audio = phonetic.audio {
-                    return audio.count > 5
+
+            DispatchQueue.main.async {
+                guard let url = URL(string: self.model.audioURLStr) else {
+                    DispatchQueue.main.async {
+                        self.invalidPlayer.toggle()
+                        self.audioLoading = false
+                    }
+                    return
                 }
-                return false
-            }?.audio ?? ""
-            
-            let definitions = wordDefinition.meanings?.compactMap { meaning -> [ResultDefinition] in
-                meaning.definitions?.map { definition -> ResultDefinition in
-                    ResultDefinition(
-                        partOfSpeech: meaning.partOfSpeech ?? "",
-                        definition: definition.definition ?? "",
-                        example: definition.example ?? ""
+
+                DispatchQueue.main.async {
+                    let playerItem = AVPlayerItem(url: url)
+                    self.player = AVPlayer(playerItem: playerItem)
+
+                    NotificationCenter.default.addObserver(
+                        self,
+                        selector: #selector(self.audioFinishedPlaying),
+                        name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                        object: playerItem
                     )
-                } ?? []
-            }.flatMap { $0 } ?? []
-            
-            return ResultWordDefinition(
-                title: word,
-                phonetic: phoneticText,
-                audioURLStr: audioURLStr,
-                definitions: definitions
-            )
+
+                    self.player?.play()
+                }
+            }
         }
 
-        public func getModel() -> ResultWordDefinition {
-            return convertToResultWordDefinition(model[0])
+        @objc func audioFinishedPlaying(note: NSNotification) {
+            DispatchQueue.main.async {
+                self.audioLoading = false
+            }
+            NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
         }
     }
 }
