@@ -31,7 +31,7 @@
     }
 
     static func makeSubscriptionView(isFullScreenCoverPresented: Binding<Bool>,
-                                 isFullScreenViewVisible: Binding<Bool>) -> SubscriptionView {
+                                     isFullScreenViewVisible: Binding<Bool>) -> SubscriptionView {
         SubscriptionView(
             viewModel: .init(useCase: ResetUserCreditLocal(userCreditRepository: KeychainUserCreditRepository())),
             isFullScreenCoverPresented: isFullScreenCoverPresented,
