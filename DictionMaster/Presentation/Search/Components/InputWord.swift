@@ -15,7 +15,10 @@ struct InputWord: View {
     
     var body: some View {
         ZStack(alignment: .leading) {
-            TextField("Type a word", text: $text, prompt: prompt, axis: .vertical)
+            TextField("Type a word", 
+                      text: $text,
+                      prompt: prompt,
+                      axis: .vertical)
                 .font(.system(.title, design: .rounded, weight: .bold))
                 .tint(color)
                 .foregroundColor(Color("color/deep_blue"))
