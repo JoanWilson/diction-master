@@ -23,17 +23,9 @@ struct ResultHeaderView: View {
 
             HStack {
                 if audioLoading {
-                    Image(systemName: "waveform")
-                        .resizable()
-                        .frame(width: 18, height: 18)
-                        .symbolEffect(
-                            .variableColor
-                            .iterative
-                            .hideInactiveLayers
-                            .reversing,
-                            options: .repeating
-                        )
-                        .modifier(PlayingButton())
+                    ProgressView()
+                        .tint(Color("color/white"))
+                        .modifier(PlayButton())
                 } else {
                     Button {
                         playSound()
