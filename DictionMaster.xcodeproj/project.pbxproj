@@ -17,7 +17,7 @@
 		8503DBA22B7124EA005C91B9 /* ResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503DBA12B7124EA005C91B9 /* ResultHeaderView.swift */; };
 		85300B342B7163DC00471E09 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85300B332B7163DC00471E09 /* PurchaseView.swift */; };
 		85300B372B718FE100471E09 /* PurchaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85300B362B718FE100471E09 /* PurchaseHeader.swift */; };
-		85300B392B71A08B00471E09 /* PurchaseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85300B382B71A08B00471E09 /* PurchaseBody.swift */; };
+		85300B392B71A08B00471E09 /* SubscriptionBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85300B382B71A08B00471E09 /* SubscriptionBody.swift */; };
 		853A25722B71502400B31AA9 /* WordDefinitionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A25712B71502400B31AA9 /* WordDefinitionsList.swift */; };
 		85440F752B75ADD500229D49 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440F742B75ADD500229D49 /* SearchViewModelTests.swift */; };
 		85440F792B75D60D00229D49 /* PurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440F782B75D60D00229D49 /* PurchaseViewModel.swift */; };
@@ -49,6 +49,8 @@
 		85C311BA2B930554001909B4 /* ScaleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C311B92B930554001909B4 /* ScaleButtonStyle.swift */; };
 		85C311BC2B930567001909B4 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C311BB2B930567001909B4 /* PlayButton.swift */; };
 		85C311BE2B937FBA001909B4 /* FadeFullCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C311BD2B937FBA001909B4 /* FadeFullCover.swift */; };
+		85C311C02B9417D8001909B4 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C311BF2B9417D8001909B4 /* SubscriptionView.swift */; };
+		85C311C22B942184001909B4 /* SubscriptionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C311C12B942184001909B4 /* SubscriptionFooter.swift */; };
 		85D685332B73B56100BBD7F3 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 85D685322B73B56100BBD7F3 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85D6853B2B73B59900BBD7F3 /* WordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6853A2B73B59900BBD7F3 /* WordDefinition.swift */; };
 		85D6853D2B73B6C700BBD7F3 /* Phonetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6853C2B73B6C700BBD7F3 /* Phonetic.swift */; };
@@ -193,7 +195,7 @@
 		8503DBA12B7124EA005C91B9 /* ResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHeaderView.swift; sourceTree = "<group>"; };
 		85300B332B7163DC00471E09 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		85300B362B718FE100471E09 /* PurchaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHeader.swift; sourceTree = "<group>"; };
-		85300B382B71A08B00471E09 /* PurchaseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseBody.swift; sourceTree = "<group>"; };
+		85300B382B71A08B00471E09 /* SubscriptionBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionBody.swift; sourceTree = "<group>"; };
 		853A25712B71502400B31AA9 /* WordDefinitionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionsList.swift; sourceTree = "<group>"; };
 		85440F742B75ADD500229D49 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		85440F782B75D60D00229D49 /* PurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewModel.swift; sourceTree = "<group>"; };
@@ -218,6 +220,8 @@
 		85C311B92B930554001909B4 /* ScaleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyle.swift; sourceTree = "<group>"; };
 		85C311BB2B930567001909B4 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		85C311BD2B937FBA001909B4 /* FadeFullCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeFullCover.swift; sourceTree = "<group>"; };
+		85C311BF2B9417D8001909B4 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
+		85C311C12B942184001909B4 /* SubscriptionFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionFooter.swift; sourceTree = "<group>"; };
 		85D685302B73B56100BBD7F3 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D685322B73B56100BBD7F3 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		85D6853A2B73B59900BBD7F3 /* WordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WordDefinition.swift; path = Domain/Models/WordDefinition/WordDefinition.swift; sourceTree = SOURCE_ROOT; };
@@ -355,6 +359,7 @@
 				85300B352B718FCB00471E09 /* Components */,
 				85300B332B7163DC00471E09 /* PurchaseView.swift */,
 				85440F782B75D60D00229D49 /* PurchaseViewModel.swift */,
+				85C311BF2B9417D8001909B4 /* SubscriptionView.swift */,
 			);
 			path = Purchase;
 			sourceTree = "<group>";
@@ -419,8 +424,9 @@
 		85300B352B718FCB00471E09 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				85C311C12B942184001909B4 /* SubscriptionFooter.swift */,
 				85300B362B718FE100471E09 /* PurchaseHeader.swift */,
-				85300B382B71A08B00471E09 /* PurchaseBody.swift */,
+				85300B382B71A08B00471E09 /* SubscriptionBody.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1125,13 +1131,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85300B392B71A08B00471E09 /* PurchaseBody.swift in Sources */,
+				85300B392B71A08B00471E09 /* SubscriptionBody.swift in Sources */,
 				855F86252B7577400038950F /* ResultViewModel.swift in Sources */,
 				8503DB922B70B053005C91B9 /* PrimaryButtonStyle.swift in Sources */,
 				85C311BA2B930554001909B4 /* ScaleButtonStyle.swift in Sources */,
 				85EC02872B6DCF3A003B0206 /* ContentView.swift in Sources */,
 				85C311BE2B937FBA001909B4 /* FadeFullCover.swift in Sources */,
 				85C311BC2B930567001909B4 /* PlayButton.swift in Sources */,
+				85C311C22B942184001909B4 /* SubscriptionFooter.swift in Sources */,
 				855F86162B753EEB0038950F /* AppFactory.swift in Sources */,
 				8503DB8A2B709F76005C91B9 /* InputWord.swift in Sources */,
 				855F861A2B7563620038950F /* View+.swift in Sources */,
@@ -1142,6 +1149,7 @@
 				8503DB8E2B70ADBD005C91B9 /* UIScreen+.swift in Sources */,
 				8503DB862B709573005C91B9 /* FlagView.swift in Sources */,
 				8503DB7F2B709304005C91B9 /* SearchView.swift in Sources */,
+				85C311C02B9417D8001909B4 /* SubscriptionView.swift in Sources */,
 				855F86182B75415E0038950F /* ResultBottomView.swift in Sources */,
 				8574514E2B7F184E00517B66 /* SearchButton.swift in Sources */,
 				853A25722B71502400B31AA9 /* WordDefinitionsList.swift in Sources */,
@@ -1581,7 +1589,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1638,7 +1646,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

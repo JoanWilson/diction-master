@@ -7,34 +7,30 @@
 
 import SwiftUI
 
-struct PurchaseHeader: View {
+struct SubscriptionHeader: View {
     var body: some View {
         VStack {
-            VStack(alignment: .center) {
-                ZStack(alignment: .top) {
-                    Image("image/girl_checks_mobile")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                    VStack {
-                        Spacer()
-                        Image("image/logo")
-                            .shadow(color: Color("color/deep_blue").opacity(0.2), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                    }.offset(x: 0, y: 64)
-                }
-                .frame(minHeight: 465)
-            }
-            
+            Image("image/girl_checks_mobile")
+                .resizable()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.6)
+                .aspectRatio(contentMode: .fill)
             VStack {
+                Image("image/splashLogo")
+                    .resizable()
+                    .frame(width: 138, height: 138)
                 Image("image/logoname")
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 188.42)
-                    .padding(.top, 44)
+                    .frame(width: 188.43, height: 32)
+                    .offset(y: -23)
             }
-        }.clipped()
+            .offset(y: -75)
+        }
+        .scaledToFit()
+        .frame(minHeight: 250, maxHeight: 500)
     }
 }
 
-#Preview(traits: .sizeThatFitsLayout) {
-    PurchaseHeader()
+
+#Preview {
+    SubscriptionHeader()
 }

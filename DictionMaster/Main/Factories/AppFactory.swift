@@ -30,11 +30,11 @@ enum AppFactory {
         return view
     }
 
-    static func makePurchaseView(isFullScreenCoverPresented: Binding<Bool>,
-                                 isFullScreenViewVisible: Binding<Bool>) -> PurchaseView {
-        PurchaseView(
-            viewModel: .init(useCase: ResetUserCreditLocal(userCreditRepository: KeychainUserCreditRepository())),
-            isFullScreenCoverPresented: isFullScreenCoverPresented,
-            isFullScreenViewVisible: isFullScreenViewVisible)
-    }
+//    static func makePurchaseView(isFullScreenCoverPresented: Binding<Bool>,
+//                                 isFullScreenViewVisible: Binding<Bool>) -> PurchaseView {
+//        PurchaseView(
+//            viewModel: .init(useCase: ResetUserCreditLocal(userCreditRepository: KeychainUserCreditRepository())),
+//            isFullScreenCoverPresented: isFullScreenCoverPresented,
+//            isFullScreenViewVisible: isFullScreenViewVisible)
+//    }
 }

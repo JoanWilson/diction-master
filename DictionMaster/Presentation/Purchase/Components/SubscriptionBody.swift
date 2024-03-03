@@ -7,19 +7,13 @@
 
 import SwiftUI
 
-struct PurchaseBody: View {
+struct SubscriptionBody: View {
     var body: some View {
         VStack {
             Text(subscribeText())
             .multilineTextAlignment(.center)
             .lineLimit(nil)
-            .padding(.horizontal, 20)
-            
-            Text(callToActionText())
-                .multilineTextAlignment(.center)
-                .padding(.top, 36.71)
         }
-        .padding(.init(top: 26, leading: 23, bottom: 16, trailing: 23))
     }
     
     private func callToActionText() -> AttributedString {
@@ -73,8 +67,4 @@ struct PurchaseBody: View {
         
         return attrString
     }
-}
-
-#Preview {
-    PurchaseBody()
 }

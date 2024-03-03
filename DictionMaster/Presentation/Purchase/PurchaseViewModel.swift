@@ -8,16 +8,16 @@
 import Foundation
 import Domain
 
-extension PurchaseView {
-    internal final class ViewModel: ObservableObject {
-        private let useCase: ResetUserCreditUseCase
-        
-        init(useCase: ResetUserCreditUseCase) {
-            self.useCase = useCase
-        }
-        
-        func resetUserCredit() {
-            useCase.resetUserCredit()
-        }
-    }
-}
+//extension PurchaseView {
+//    internal final class ViewModel: ObservableObject {
+//        private let useCase: ResetUserCreditUseCase
+//        
+//        init(useCase: ResetUserCreditUseCase) {
+//            self.useCase = useCase
+//        }
+//        
+//        func resetUserCredit() {
+//            useCase.resetUserCredit()
+//        }
+//    }
+//}
