@@ -3,6 +3,14 @@
 
 > An iOS app created using clean architecture. It is my solved challenged for iOS Position at Falou. This is an app that receive any word in english and display the word definition through api request.
 
+## V2 Updates (Please change to branch V2 or dev)
+- [x] NewLoading when tapping buttons.
+- [x] When new search, the keyboard is focused.
+- [x] Update in font/colors/sizes.
+- [x] Searching was improved in 4 seconds!
+- [x] Fade in and out when transitioning screens.
+- [x] Include testing in Infrastructure layer in macOS target in order to improve build speed. 
+
 ## 👩🏾‍💻 Goals
 - [x] Fetch Data from FreeDictionary API v2
 - [x] All Screens design were implemented
