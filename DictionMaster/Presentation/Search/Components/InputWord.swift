@@ -10,12 +10,14 @@ import SwiftUI
 struct InputWord: View {
     @Binding var text: String
     @FocusState var isTextfieldFocused: Bool
+    @State var color: Color = .clear
     let placeholder: String
     
     var body: some View {
         ZStack(alignment: .leading) {
             TextField("Type a word", text: $text, prompt: prompt, axis: .vertical)
                 .font(.system(.title, design: .rounded, weight: .bold))
+                .tint(color)
                 .foregroundColor(Color("color/deep_blue"))
                 .multilineTextAlignment(.center)
                 .focused($isTextfieldFocused)
@@ -23,6 +25,13 @@ struct InputWord: View {
                     isTextfieldFocused = true
                 }
                 .autocorrectionDisabled()
+                .onChange(of: text) {
+                    if text.isEmpty {
+                        color = .clear
+                    } else {
+                        color = Color("color/primary")
+                    }
+                }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
