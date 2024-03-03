@@ -9,15 +9,14 @@ import SwiftUI
 import Domain
 
 struct SearchView: View {
-    @StateObject var viewModel: ViewModel
+    @ObservedObject var viewModel: ViewModel
     @FocusState var isTextFieldFocused: Bool
 
     var body: some View {
         NavigationStack {
             VStack {
                 FlagView(language: .english)
-
-                Spacer()
+                    .padding(.bottom, UIScreen.screenHeight * 0.2)
 
                 InputWord(
                     text: $viewModel.text,
@@ -54,20 +53,27 @@ struct SearchView: View {
                 )
             }
             .transaction({ transaction in
-                if !viewModel.isFirstAppear {
+                print(transaction)
+                if viewModel.appearingCount > 1 {
+                    print("Apareceu")
                     transaction.disablesAnimations = true
                     transaction.animation = .linear(duration: 0.2)
                 } else {
-                    viewModel.isFirstAppear = false
+                    print("Increase")
+                    viewModel.appearingCount += 1
                 }
             })
-            .onChange(of: viewModel.isFullScreenCoverPresented || viewModel.isPurchaseViewPresented, { _, newValue in
+            .onChange(of: viewModel.isFullScreenCoverPresented || viewModel.isPurchaseViewPresented || viewModel.showAlert, { _, newValue in
                 if !newValue {
                     viewModel.text = ""
                     isTextFieldFocused = true
                 }
             })
             .padding(.init(top: 75, leading: 18, bottom: 20, trailing: 17))
+            .onAppear {
+                viewModel.text = ""
+                isTextFieldFocused = true
+            }
         }
         .onTapGesture {
             hideKeyboard()

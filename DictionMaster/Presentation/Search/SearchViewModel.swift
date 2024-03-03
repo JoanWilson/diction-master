@@ -23,7 +23,7 @@ extension SearchView {
         @Published var isPurchaseViewVisible = false
         private var tasks: [Task<Void, Never>] = []
         private let useCase: GetWordDefinitionsUseCase
-        var isFirstAppear: Bool = true
+        var appearingCount: Int = 0
 
         init(useCase: GetWordDefinitionsUseCase) {
             self.useCase = useCase

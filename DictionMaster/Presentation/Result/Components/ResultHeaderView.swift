@@ -47,7 +47,7 @@ struct ResultHeaderView: View {
                 }
 
                 Text("\(subtitle)")
-                    .font(.system(.title2, design: .rounded, weight: .bold))
+                    .font(.system(size: 22, weight: .bold, design: .rounded))
                     .foregroundStyle(Color("color/deep_blue").opacity(0.4))
             }
         }
